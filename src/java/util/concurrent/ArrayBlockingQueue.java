@@ -91,6 +91,7 @@ public class ArrayBlockingQueue<E> extends AbstractQueue<E>
     private static final long serialVersionUID = -817911632652898426L;
 
     /** The queued items */
+    //内部数据结构
     final Object[] items;
 
     /** items index for next take, poll, peek or remove */
