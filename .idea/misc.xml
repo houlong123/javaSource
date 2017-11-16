@@ -81,7 +81,4 @@
       </state>
     </states>
   </component>
-  <component name="uidesigner-configuration">
-    <option name="INSTRUMENT_CLASSES" value="false" />
-  </component>
 </project>
