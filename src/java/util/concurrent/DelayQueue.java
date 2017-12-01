@@ -70,7 +70,9 @@ import java.util.*;
 public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
     implements BlockingQueue<E> {
 
+    //可重入锁
     private final transient ReentrantLock lock = new ReentrantLock();
+    //存储元素的优先级队列
     private final PriorityQueue<E> q = new PriorityQueue<E>();
 
     /**
@@ -89,6 +91,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      * signalled.  So waiting threads must be prepared to acquire
      * and lose leadership while waiting.
      */
+    //等待队列头部元素的指定线程
     private Thread leader = null;
 
     /**
@@ -96,6 +99,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      * at the head of the queue or a new thread may need to
      * become leader.
      */
+    //条件控制，表示是否可以从队列中取数据
     private final Condition available = lock.newCondition();
 
     /**
@@ -135,9 +139,12 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      */
     public boolean offer(E e) {
         final ReentrantLock lock = this.lock;
-        lock.lock();
+        lock.lock();    //获取锁
         try {
+            //通过PriorityQueue 来将元素入队
             q.offer(e);
+
+            //peek 是获取的队头元素，如果队头元素为当前添加元素，则说明当前元素的优先级最小也就即将过期。这时候激活avaliable变量条件队列里面的一个线程，通知他们队列里面有元素了。
             if (q.peek() == e) {
                 leader = null;
                 available.signal();
@@ -182,13 +189,16 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      */
     public E poll() {
         final ReentrantLock lock = this.lock;
-        lock.lock();
+        lock.lock();     //获取同步锁
         try {
+            //获取队头
             E first = q.peek();
+
+            //如果队头为null 或者 延时还没有到，则返回null
             if (first == null || first.getDelay(NANOSECONDS) > 0)
                 return null;
             else
-                return q.poll();
+                return q.poll();    //元素出队
         } finally {
             lock.unlock();
         }
@@ -203,23 +213,28 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      */
     public E take() throws InterruptedException {
         final ReentrantLock lock = this.lock;
-        lock.lockInterruptibly();
+        lock.lockInterruptibly();   // 获取可中断锁
         try {
-            for (;;) {
-                E first = q.peek();
-                if (first == null)
+            for (;;) {  //无限循环
+                E first = q.peek(); //获取队列头元素
+                if (first == null)  //如果队列为空，则等待
                     available.await();
                 else {
+                    //获取元素延迟时间
                     long delay = first.getDelay(NANOSECONDS);
-                    if (delay <= 0)
+                    if (delay <= 0)      //延迟时间到期，返回队列头元素
                         return q.poll();
+
                     first = null; // don't retain ref while waiting
+
+                    // //如果有其它线程在等待获取元素，则当前线程不用去竞争，直接等待
                     if (leader != null)
                         available.await();
                     else {
                         Thread thisThread = Thread.currentThread();
                         leader = thisThread;
                         try {
+                            //等待延迟时间到期
                             available.awaitNanos(delay);
                         } finally {
                             if (leader == thisThread)
@@ -229,6 +244,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
                 }
             }
         } finally {
+            //唤醒阻塞在available 的一个线程，表示可以取数据了
             if (leader == null && q.peek() != null)
                 available.signal();
             lock.unlock();
@@ -246,33 +262,47 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
      * @throws InterruptedException {@inheritDoc}
      */
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
+        //超时等待时间
         long nanos = unit.toNanos(timeout);
+
         final ReentrantLock lock = this.lock;
-        lock.lockInterruptibly();
+        lock.lockInterruptibly();   //可中断的获取锁
         try {
-            for (;;) {
-                E first = q.peek();
+            for (;;) {  //无限循环
+                E first = q.peek();     //获取队头元素
+
+                //队头为空，即队列为空
                 if (first == null) {
-                    if (nanos <= 0)
+                    if (nanos <= 0) //达到超时指定时间，返回null
                         return null;
                     else
+                        // 如果还没有超时，那么再available条件上进行等待nanos时间
                         nanos = available.awaitNanos(nanos);
                 } else {
+                    //获取元素延迟时间
                     long delay = first.getDelay(NANOSECONDS);
+
+                    //延迟时间到期，返回队列头元素
                     if (delay <= 0)
                         return q.poll();
+
+                    //延迟时间未到期，超时到期，返回null
                     if (nanos <= 0)
                         return null;
-                    first = null; // don't retain ref while waiting
+
+                    first = null; //在等待的时候，不需要持有引用。用于GC。 don't retain ref while waiting
+
+                    // 超时等待时间 < 延迟时间 或者有其它线程再取数据
                     if (nanos < delay || leader != null)
-                        nanos = available.awaitNanos(nanos);
-                    else {
+                        nanos = available.awaitNanos(nanos);     //在available 条件上进行等待nanos 时间
+                    else {   //超时等待时间 > 延迟时间 并且没有其它线程在等待，那么当前线程成为leader，表示leader 线程 正在等待获取元素
                         Thread thisThread = Thread.currentThread();
                         leader = thisThread;
                         try {
-                            long timeLeft = available.awaitNanos(delay);
-                            nanos -= delay - timeLeft;
+                            long timeLeft = available.awaitNanos(delay);    //等待 延迟时间 还剩余多少
+                            nanos -= delay - timeLeft;  //还需要继续等待 nanos
                         } finally {
+                            //清除 leader
                             if (leader == thisThread)
                                 leader = null;
                         }
@@ -280,6 +310,7 @@ public class DelayQueue<E extends Delayed> extends AbstractQueue<E>
                 }
             }
         } finally {
+            //唤醒阻塞在available 的一个线程，表示可以取数据了
             if (leader == null && q.peek() != null)
                 available.signal();
             lock.unlock();
