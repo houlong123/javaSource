@@ -492,7 +492,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
                          (timed ? maxTimedSpins : maxUntimedSpins) : 0);
             for (;;) {  // 无限循环，确保操作成功
                 if (w.isInterrupted())  // 当前线程被中断
-                    // 取消s结点
+                    // 取消s结点，原理是将节点s的match域设置为this
                     s.tryCancel();
                 // 获取s结点的match域
                 SNode m = s.match;
@@ -969,7 +969,7 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
                      *   (1)cleanMe的后继而空（cleanMe 标记的是需要删除节点的前驱）
                      *   (2)cleanMe的后继等于自身（这个前面有分析过）
                      *   (3)需要删除节点的操作没有被取消
-                     *   (4)被删除的节点不是尾节点且其后继节点有效
+                     *   (4)被删除的节点不是尾节点且其后继节点有效，并将待删除节点删除
                      */
                      if (d == null ||               // d is gone or
                         d == dp ||                 // d is off list or
@@ -1118,7 +1118,6 @@ public class SynchronousQueue<E> extends AbstractQueue<E>
      * @throws InterruptedException {@inheritDoc}
      */
     // 获取并移除此队列的头，如有必要则等待指定的时间，以便另一个线程插入它
-
     public E poll(long timeout, TimeUnit unit) throws InterruptedException {
         E e = transferer.transfer(null, true, unit.toNanos(timeout));
         if (e != null || !Thread.interrupted())  // 元素不为null或者当前线程没有被中断
