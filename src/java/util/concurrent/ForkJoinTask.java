@@ -383,11 +383,18 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      */
     private int doJoin() {
         int s; Thread t; ForkJoinWorkerThread wt; ForkJoinPool.WorkQueue w;
+
+        //判断执行的状态
         return (s = status) < 0 ? s :
+
+                //判断是否fork/join的线程
                 ((t = Thread.currentThread()) instanceof ForkJoinWorkerThread) ?
-                        (w = (wt = (ForkJoinWorkerThread)t).workQueue).
-                                tryUnpush(this) && (s = doExec()) < 0 ? s :
+
+                        //判断是否在队列的头部 && 在执行头部
+                        (w = (wt = (ForkJoinWorkerThread)t).workQueue).tryUnpush(this) && (s = doExec()) < 0 ? s :
+                                //加入到等待的队列
                                 wt.pool.awaitJoin(w, this, 0L) :
+                        //不是fork/join线程 阻塞
                         externalAwaitDone();
     }
 
@@ -696,9 +703,12 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      */
     public final ForkJoinTask<V> fork() {
         Thread t;
+
+        //如果当前的线程是Fork/join的线程,就添加到队列中
         if ((t = Thread.currentThread()) instanceof ForkJoinWorkerThread)
             ((ForkJoinWorkerThread)t).workQueue.push(this);
         else
+            //当task是直接被调用,而不是使用ForkJoinWorkerThread的话,直接执行任务.
             ForkJoinPool.common.externalPush(this);
         return this;
     }
@@ -714,8 +724,10 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      *
      * @return the computed result
      */
+    //执行子任务并合并子任务的结果集
     public final V join() {
         int s;
+        //执行任务
         if ((s = doJoin() & DONE_MASK) != NORMAL)
             reportException(s);
         return getRawResult();

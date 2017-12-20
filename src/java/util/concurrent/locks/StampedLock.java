@@ -1039,7 +1039,7 @@ public class StampedLock implements java.io.Serializable {
             //将state超过 RFULL=126的值放到readerOverflow字段中，state保持不变，但锁状态+1
             if (U.compareAndSwapLong(this, STATE, s, s | RBITS)) {
                 ++readerOverflow;
-                state = s;
+                state = s;  //将state保持不变
                 return s;
             }
         }
