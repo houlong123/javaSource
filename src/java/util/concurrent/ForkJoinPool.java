@@ -2570,13 +2570,20 @@ public class ForkJoinPool extends AbstractExecutorService {
      * locks if apparently non-empty, validates upon locking, and
      * adjusts top. Each check can fail but rarely does.
      */
+    //为外部提交者执行tryUnpush：查找队列，锁定（如果显然非空），锁定时验证并调整top。 每个检查可能会失败，但很少。
     final boolean tryExternalUnpush(ForkJoinTask<?> task) {
         WorkQueue[] ws; WorkQueue w; ForkJoinTask<?>[] a; int m, s;
         int r = ThreadLocalRandom.getProbe();
+
+
         if ((ws = workQueues) != null && (m = ws.length - 1) >= 0 &&
                 (w = ws[m & r & SQMASK]) != null &&
-                (a = w.array) != null && (s = w.top) != w.base) {
+                (a = w.array) != null && (s = w.top) != w.base) {   //查找队列，且队列内任务不可
+
+            //确定任务的索引位置
             long j = (((a.length - 1) & (s - 1)) << ASHIFT) + ABASE;
+
+            //弹出任务，并修改top值
             if (U.compareAndSwapInt(w, QLOCK, 0, 1)) {
                 if (w.top == s && w.array == a &&
                         U.getObject(a, j) == task &&

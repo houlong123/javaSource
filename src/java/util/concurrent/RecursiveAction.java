@@ -168,6 +168,7 @@ public abstract class RecursiveAction extends ForkJoinTask<Void> {
     /**
      * The main computation performed by this task.
      */
+    //抽象方法。由开发者自己实现
     protected abstract void compute();
 
     /**
@@ -175,6 +176,7 @@ public abstract class RecursiveAction extends ForkJoinTask<Void> {
      *
      * @return {@code null} always
      */
+    //因为该类是没有返回值的，所以返回null
     public final Void getRawResult() { return null; }
 
     /**
@@ -185,6 +187,7 @@ public abstract class RecursiveAction extends ForkJoinTask<Void> {
     /**
      * Implements execution conventions for RecursiveActions.
      */
+    //执行任务。内部调用compute()方法
     protected final boolean exec() {
         compute();
         return true;
