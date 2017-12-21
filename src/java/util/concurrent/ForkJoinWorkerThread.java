@@ -149,11 +149,14 @@ public class ForkJoinWorkerThread extends Thread {
      * called explicitly. It performs the main run loop to execute
      * {@link ForkJoinTask}s.
      */
+    //重载Thread中的run，执行ForkJoinTask任务
     public void run() {
+        //仅在工作队列中的任务列表为空时，才会执行run方法中的实现逻辑
         if (workQueue.array == null) { // only run once
             Throwable exception = null;
             try {
                 onStart();
+                //调用pool的runWorker来获取任务执行
                 pool.runWorker(workQueue);
             } catch (Throwable ex) {
                 exception = ex;

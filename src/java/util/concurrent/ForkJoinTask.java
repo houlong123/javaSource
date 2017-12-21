@@ -284,12 +284,17 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      */
     final int doExec() {
         int s; boolean completed;
+
+        //判断任务状态,是否执行
         if ((s = status) >= 0) {
             try {
+                //在ForkJoinTask两个子类中的实现方式都是调用compute()方法。compute()方法就是Fork Join要执行的内容，是Fork Join任务的实质，需要开发者实现
                 completed = exec();
             } catch (Throwable rex) {
                 return setExceptionalCompletion(rex);
             }
+
+            //完成任务,修改状态
             if (completed)
                 s = setCompletion(NORMAL);
         }
@@ -381,6 +386,8 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      *
      * @return status upon completion
      */
+    //doJoin方法是进行合并,合并之前需要进行判断,看当前的任务是否可以执行,如果可以执行则调用doExec方法,如果不能执行则加入等待的队列
+    //在join获取执行任务时，是从队列的头部开始，而在sacn窃取工作任务时，是从队列的尾部开始
     private int doJoin() {
         int s; Thread t; ForkJoinWorkerThread wt; ForkJoinPool.WorkQueue w;
 
@@ -403,6 +410,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      *
      * @return status upon completion
      */
+    //执行任务。执行成功直接返回；执行失败后，如果属于Fork/join的线程,将任务添加到等待队列；否则阻塞
     private int doInvoke() {
         int s; Thread t; ForkJoinWorkerThread wt;
         return (s = doExec()) < 0 ? s :
@@ -701,6 +709,7 @@ public abstract class ForkJoinTask<V> implements Future<V>, Serializable {
      *
      * @return {@code this}, to simplify usage
      */
+    //将任务进行拆分
     public final ForkJoinTask<V> fork() {
         Thread t;
 
