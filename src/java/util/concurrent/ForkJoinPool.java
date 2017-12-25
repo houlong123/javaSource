@@ -1057,23 +1057,32 @@ public class ForkJoinPool extends AbstractExecutorService {
          * pollAndExecAll. Otherwise implements a specialized pop loop
          * to exec until empty.
          */
+        //删除并执行所有本地任务。
         final void execLocalTasks() {
             int b = base, m, s;
+            //获取当前线程内部任务
             ForkJoinTask<?>[] a = array;
+
             if (b - (s = top - 1) <= 0 && a != null &&
-                    (m = a.length - 1) >= 0) {
-                if ((config & FIFO_QUEUE) == 0) {
+                    (m = a.length - 1) >= 0) {  //有任务
+
+                if ((config & FIFO_QUEUE) == 0) {   //如果是先进先出（FIFO）队列，则从top位置依次取出任务并执行
                     for (ForkJoinTask<?> t;;) {
+
                         if ((t = (ForkJoinTask<?>)U.getAndSetObject
-                                (a, ((m & s) << ASHIFT) + ABASE, null)) == null)
+                                (a, ((m & s) << ASHIFT) + ABASE, null)) == null)    //任务为空，则说明还没有任务，则跳出循环，方法结束
                             break;
+
+                        //修改top值
                         U.putOrderedInt(this, QTOP, s);
+                        //执行任务
                         t.doExec();
+                        //如果任务全部执行完，则跳出循环，方法结束
                         if (base - (s = top - 1) > 0)
                             break;
                     }
                 }
-                else
+                else    //如果是后进先出（LIFO）队列，则调用pollAndExecAll方法删除并执行任务
                     pollAndExecAll();
             }
         }
@@ -1573,15 +1582,23 @@ public class ForkJoinPool extends AbstractExecutorService {
      */
     final WorkQueue registerWorker(ForkJoinWorkerThread wt) {
         UncaughtExceptionHandler handler;
+        //将工作线程设置为后台线程
         wt.setDaemon(true);                           // configure thread
+
+        //设置异常处理类
         if ((handler = ueh) != null)
             wt.setUncaughtExceptionHandler(handler);
+
+        //创建工作队列
         WorkQueue w = new WorkQueue(this, wt);
         int i = 0;                                    // assign a pool index
+        //确定工作队列的类型
         int mode = config & MODE_MASK;
         int rs = lockRunState();
         try {
             WorkQueue[] ws; int n;                    // skip if no array
+
+            //池中有工作队列列表时，将新创建的工作队列添加进去。在添加的过程中，如果池中有工作队列列表容量不够，则需要进行2倍扩容操作
             if ((ws = workQueues) != null && (n = ws.length) > 0) {
                 int s = indexSeed += SEED_INCREMENT;  // unlikely to collide
                 int m = n - 1;
@@ -2509,6 +2526,8 @@ public class ForkJoinPool extends AbstractExecutorService {
      *
      * @param task the task. Caller must ensure non-null.
      */
+    //该方法是在当前线程为非工作线程插入任务时调用。如果当前线程为任务线程，
+    // 则直接将任务插入当前线程中的工作队列中；如果当前线程不是任务线程，则需要从池中先随机定位到一个工作线程，然后将任务插入。
     final void externalPush(ForkJoinTask<?> task) {
         WorkQueue[] ws; WorkQueue q; int m;
         //取得一个随机探查数，可能为0也可能为其它数
