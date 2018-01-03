@@ -153,6 +153,7 @@ public interface ExecutorService extends Executor {
      *         or the security manager's {@code checkAccess} method
      *         denies access.
      */
+    //在调用该方法后，先前已提交的任务被有序执行，但是不在接受新任务。
     void shutdown();
 
     /**
@@ -178,6 +179,7 @@ public interface ExecutorService extends Executor {
      *         or the security manager's {@code checkAccess} method
      *         denies access.
      */
+    //立即关闭，并返回没有执行的任务列表
     List<Runnable> shutdownNow();
 
     /**
@@ -185,6 +187,7 @@ public interface ExecutorService extends Executor {
      *
      * @return {@code true} if this executor has been shut down
      */
+    //如果执行器已被关闭，则返回true
     boolean isShutdown();
 
     /**
@@ -194,6 +197,7 @@ public interface ExecutorService extends Executor {
      *
      * @return {@code true} if all tasks have completed following shut down
      */
+    //如果在关闭后，所有任务都已执行完，则返回true。需要注意的是，如果没有调用shutdown()或shutdownNow()方法，isTerminated()不会返回true
     boolean isTerminated();
 
     /**
