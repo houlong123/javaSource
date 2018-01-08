@@ -153,6 +153,7 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
  * @since 1.5
  * @author Doug Lea
  */
+//计数信号量
 public class Semaphore implements java.io.Serializable {
     private static final long serialVersionUID = -3222578661600680210L;
     /** All mechanics via AbstractQueuedSynchronizer subclass */
@@ -163,38 +164,53 @@ public class Semaphore implements java.io.Serializable {
      * to represent permits. Subclassed into fair and nonfair
      * versions.
      */
+    // 内部类，继承自AQS
     abstract static class Sync extends AbstractQueuedSynchronizer {
         private static final long serialVersionUID = 1192457210091910933L;
 
         Sync(int permits) {
+            // 设置状态数
             setState(permits);
         }
 
+        // 获取许可
         final int getPermits() {
             return getState();
         }
 
+        // 共享模式下非公平策略获取
         final int nonfairTryAcquireShared(int acquires) {
+            //无限循环
             for (;;) {
+                // 获取许可数
                 int available = getState();
+                //剩余的许可
                 int remaining = available - acquires;
+
+                // 许可小于0或者比较并且设置状态成功
                 if (remaining < 0 ||
                     compareAndSetState(available, remaining))
                     return remaining;
             }
         }
 
+        // 共享模式下进行释放
         protected final boolean tryReleaseShared(int releases) {
+            //无限循环
             for (;;) {
+                //释放许可
                 int current = getState();
+                // 可用的许可
                 int next = current + releases;
                 if (next < current) // overflow
                     throw new Error("Maximum permit count exceeded");
+                //CAS设置许可数
                 if (compareAndSetState(current, next))
                     return true;
             }
         }
 
+        // 根据指定的缩减量减小可用许可的数目
         final void reducePermits(int reductions) {
             for (;;) {
                 int current = getState();
@@ -206,6 +222,7 @@ public class Semaphore implements java.io.Serializable {
             }
         }
 
+        // 获取并返回立即可用的所有许可
         final int drainPermits() {
             for (;;) {
                 int current = getState();
@@ -218,6 +235,7 @@ public class Semaphore implements java.io.Serializable {
     /**
      * NonFair version
      */
+    //非公平策略获取资源许可
     static final class NonfairSync extends Sync {
         private static final long serialVersionUID = -2694183684443567898L;
 
@@ -225,6 +243,7 @@ public class Semaphore implements java.io.Serializable {
             super(permits);
         }
 
+        // 共享模式下获取
         protected int tryAcquireShared(int acquires) {
             return nonfairTryAcquireShared(acquires);
         }
@@ -233,6 +252,7 @@ public class Semaphore implements java.io.Serializable {
     /**
      * Fair version
      */
+    //公平策略获取资源许可
     static final class FairSync extends Sync {
         private static final long serialVersionUID = 2014338818796000944L;
 
@@ -242,6 +262,7 @@ public class Semaphore implements java.io.Serializable {
 
         protected int tryAcquireShared(int acquires) {
             for (;;) {
+                // 同步队列中存在其他节点，获取许可失败
                 if (hasQueuedPredecessors())
                     return -1;
                 int available = getState();
@@ -262,6 +283,7 @@ public class Semaphore implements java.io.Serializable {
      *        must occur before any acquires will be granted.
      */
     public Semaphore(int permits) {
+        //默认使用非公平策略锁
         sync = new NonfairSync(permits);
     }
 

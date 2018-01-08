@@ -153,14 +153,19 @@ public class CyclicBarrier {
     }
 
     /** The lock for guarding barrier entry */
+    //全局的重入 lock
     private final ReentrantLock lock = new ReentrantLock();
     /** Condition to wait on until tripped */
+    //控制线程等待
     private final Condition trip = lock.newCondition();
     /** The number of parties */
+    //给定数量的线程
     private final int parties;
     /* The command to run when tripped */
+    //当所有线程到达 barrier 时执行的任务
     private final Runnable barrierCommand;
     /** The current generation */
+    //初始化 generation
     private Generation generation = new Generation();
 
     /**
@@ -168,17 +173,22 @@ public class CyclicBarrier {
      * on each generation.  It is reset to parties on each new
      * generation or when broken.
      */
+    //仍在等待的线程数
     private int count;
 
     /**
      * Updates state on barrier trip and wakes up everyone.
      * Called only while holding lock.
      */
+    //生成下一个 generation
     private void nextGeneration() {
         // signal completion of last generation
+        // 唤醒所有等待的线程来获取 AQS 的state的值
         trip.signalAll();
         // set up next generation
+        // 重新赋值计算器
         count = parties;
+        // 重新初始化 generation
         generation = new Generation();
     }
 
@@ -186,6 +196,7 @@ public class CyclicBarrier {
      * Sets current barrier generation as broken and wakes up everyone.
      * Called only while holding lock.
      */
+    // 当某个线程被中断 / 等待超时 则将 broken = true, 并且唤醒所有等待中的线程
     private void breakBarrier() {
         generation.broken = true;
         count = parties;
@@ -199,27 +210,31 @@ public class CyclicBarrier {
         throws InterruptedException, BrokenBarrierException,
                TimeoutException {
         final ReentrantLock lock = this.lock;
+        // 1. 获取 ReentrantLock
         lock.lock();
         try {
             final Generation g = generation;
 
+            // 2. 判断 generation 是否已经 broken
             if (g.broken)
                 throw new BrokenBarrierException();
 
+            // 3. 判断线程是否中断, 中断后就 breakBarrier
             if (Thread.interrupted()) {
                 breakBarrier();
                 throw new InterruptedException();
             }
 
+            //更新已经到达 barrier 的线程数
             int index = --count;
-            if (index == 0) {  // tripped
+            if (index == 0) {  // tripped   当所有线程到达了 barrier时，触发屏障
                 boolean ranAction = false;
                 try {
                     final Runnable command = barrierCommand;
-                    if (command != null)
+                    if (command != null)    //最后一个线程到达 barrier, 执行 command
                         command.run();
                     ranAction = true;
-                    nextGeneration();
+                    nextGeneration();   //更新 generation
                     return 0;
                 } finally {
                     if (!ranAction)
@@ -231,9 +246,9 @@ public class CyclicBarrier {
             for (;;) {
                 try {
                     if (!timed)
-                        trip.await();
+                        trip.await();   //没有进行 timeout 的 await，其中，在Condition.await()的时候，会释放已持有的锁
                     else if (nanos > 0L)
-                        nanos = trip.awaitNanos(nanos);
+                        nanos = trip.awaitNanos(nanos); //进行 timeout 方式的等待
                 } catch (InterruptedException ie) {
                     if (g == generation && ! g.broken) {
                         breakBarrier();
@@ -278,6 +293,7 @@ public class CyclicBarrier {
         if (parties <= 0) throw new IllegalArgumentException();
         this.parties = parties;
         this.count = parties;
+        //当给定数量的线程处于等待时，会触发屏障CyclicBarrier，当屏障被触发时执行该命令
         this.barrierCommand = barrierAction;
     }
 
@@ -443,6 +459,7 @@ public class CyclicBarrier {
      *         construction or the last reset, or a barrier action
      *         failed due to an exception; {@code false} otherwise.
      */
+    //判断 barrier 是否 broken = true
     public boolean isBroken() {
         final ReentrantLock lock = this.lock;
         lock.lock();
@@ -462,6 +479,7 @@ public class CyclicBarrier {
      * and choose one to perform the reset.  It may be preferable to
      * instead create a new barrier for subsequent use.
      */
+    //将屏障重置为初始状态。
     public void reset() {
         final ReentrantLock lock = this.lock;
         lock.lock();
