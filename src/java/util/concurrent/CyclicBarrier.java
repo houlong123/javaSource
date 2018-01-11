@@ -264,6 +264,7 @@ public class CyclicBarrier {
                 if (g.broken)
                     throw new BrokenBarrierException();
 
+                //所有线程到达 barrier 直接返回
                 if (g != generation)
                     return index;
 
