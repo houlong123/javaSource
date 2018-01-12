@@ -94,6 +94,8 @@ import java.util.Arrays;
  * @see     String
  * @since   JDK1.0
  */
+//该类为线程安全类，在方法之前都加上了重量级悲观锁synchronized。与StringBuilder还有一处不一样的地方是：StringBuffer的数据结构中，
+// 会有一个toStringCache用于缓存调用toString()的返回值。
  public final class StringBuffer
     extends AbstractStringBuilder
     implements java.io.Serializable, CharSequence
@@ -103,6 +105,7 @@ import java.util.Arrays;
      * A cache of the last value returned by toString. Cleared
      * whenever the StringBuffer is modified.
      */
+    //在toString的时候，会缓存结果值
     private transient char[] toStringCache;
 
     /** use serialVersionUID from JDK 1.0.2 for interoperability */
@@ -112,6 +115,7 @@ import java.util.Arrays;
      * Constructs a string buffer with no characters in it and an
      * initial capacity of 16 characters.
      */
+    //默认初始化为16个字节
     public StringBuffer() {
         super(16);
     }
@@ -135,6 +139,7 @@ import java.util.Arrays;
      *
      * @param   str   the initial contents of the buffer.
      */
+    //默认初始化为16个字节 + 字符串的长度
     public StringBuffer(String str) {
         super(str.length() + 16);
         append(str);
@@ -172,7 +177,7 @@ import java.util.Arrays;
     @Override
     public synchronized void ensureCapacity(int minimumCapacity) {
         if (minimumCapacity > value.length) {
-            expandCapacity(minimumCapacity);
+            super.ensureCapacity(minimumCapacity);
         }
     }
 

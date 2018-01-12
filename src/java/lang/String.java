@@ -111,9 +111,11 @@ import java.util.regex.PatternSyntaxException;
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
+    //字符存储数组
     private final char value[];
 
     /** Cache the hash code for the string */
+    //字符串的哈希值
     private int hash; // Default to 0
 
     /** use serialVersionUID from JDK 1.0.2 for interoperability */
@@ -163,6 +165,7 @@ public final class String
      *         The initial value of the string
      */
     public String(char value[]) {
+        //该方法会把参数拷贝一份赋值给内部字节数组，还有一个共享的创建方法String(char value[], boolean share)，在该构造方法中实现逻辑为：this.value = value;
         this.value = Arrays.copyOf(value, value.length);
     }
 
@@ -564,6 +567,7 @@ public final class String
      *         A {@code StringBuffer}
      */
     public String(StringBuffer buffer) {
+        //与new String(StringBuilder builder)不同之处在于：该方法在拷贝字节数组时会加锁
         synchronized(buffer) {
             this.value = Arrays.copyOf(buffer.getValue(), buffer.length());
         }
@@ -585,6 +589,7 @@ public final class String
      * @since  1.5
      */
     public String(StringBuilder builder) {
+        //拷贝一个StringBuilder内部的字节数组
         this.value = Arrays.copyOf(builder.getValue(), builder.length());
     }
 
@@ -641,6 +646,7 @@ public final class String
      *             argument is negative or not less than the length of this
      *             string.
      */
+    //获取在指定索引处的字节
     public char charAt(int index) {
         if ((index < 0) || (index >= value.length)) {
             throw new StringIndexOutOfBoundsException(index);
@@ -767,6 +773,7 @@ public final class String
      * Copy characters from this string into dst starting at dstBegin.
      * This method doesn't perform any range checking.
      */
+    //将内部字节数组拷贝到dst。dstBegin为dst开始位置
     void getChars(char dst[], int dstBegin) {
         System.arraycopy(value, 0, dst, dstBegin, value.length);
     }
@@ -961,6 +968,7 @@ public final class String
      * @see  #compareTo(String)
      * @see  #equalsIgnoreCase(String)
      */
+    //判断逻辑是：依次判断内部的字节数组是否相同
     public boolean equals(Object anObject) {
         if (this == anObject) {
             return true;
@@ -972,6 +980,8 @@ public final class String
                 char v1[] = value;
                 char v2[] = anotherString.value;
                 int i = 0;
+
+                //判断内部字节数组是否都相等
                 while (n-- != 0) {
                     if (v1[i] != v2[i])
                         return false;
@@ -1145,6 +1155,7 @@ public final class String
         char v2[] = anotherString.value;
 
         int k = 0;
+        //依次循环字节数组，在指定索引处字节不一致时，判断大小
         while (k < lim) {
             char c1 = v1[k];
             char c2 = v2[k];
@@ -1222,6 +1233,7 @@ public final class String
      * @see     java.text.Collator#compare(String, String)
      * @since   1.2
      */
+    //比较时，忽略大小写
     public int compareToIgnoreCase(String str) {
         return CASE_INSENSITIVE_ORDER.compare(this, str);
     }
@@ -1942,6 +1954,7 @@ public final class String
      *             {@code beginIndex} is larger than
      *             {@code endIndex}.
      */
+    //从beginIndex开始截取，到endIndex结束，但是不包括endIndex位置处的字符
     public String substring(int beginIndex, int endIndex) {
         if (beginIndex < 0) {
             throw new StringIndexOutOfBoundsException(beginIndex);
@@ -2010,6 +2023,7 @@ public final class String
      * @return  a string that represents the concatenation of this object's
      *          characters followed by the string argument's characters.
      */
+    //将字符串str追加到调用者的后面
     public String concat(String str) {
         int otherLen = str.length();
         if (otherLen == 0) {
@@ -2051,26 +2065,34 @@ public final class String
      *          occurrence of {@code oldChar} with {@code newChar}.
      */
     public String replace(char oldChar, char newChar) {
+        //在新旧字节不同时，进行内部操作
         if (oldChar != newChar) {
             int len = value.length;
             int i = -1;
             char[] val = value; /* avoid getfield opcode */
 
+            //遍历字符串内部字节数组，找到第一个字节与oldChar相同时，跳出循环
             while (++i < len) {
                 if (val[i] == oldChar) {
                     break;
                 }
             }
+
             if (i < len) {
+                //创建一个新的字节数组
                 char buf[] = new char[len];
+                //将找到的第一个字节与oldChar相同字节之前的所有字节拷贝到新数组
                 for (int j = 0; j < i; j++) {
                     buf[j] = val[j];
                 }
+
+                //依次替换第一个与oldChar相同字节之后的oldChar为newChar
                 while (i < len) {
                     char c = val[i];
                     buf[i] = (c == oldChar) ? newChar : c;
                     i++;
                 }
+
                 return new String(buf, true);
             }
         }

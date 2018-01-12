@@ -44,15 +44,18 @@ import java.util.Arrays;
  * @author      Ulf Zibis
  * @since       1.5
  */
+//该类为StringBuffer何StringBuilder的公共父类
 abstract class AbstractStringBuilder implements Appendable, CharSequence {
     /**
      * The value is used for character storage.
      */
+    //内部存储字节
     char[] value;
 
     /**
      * The count is the number of characters used.
      */
+    //字节长度
     int count;
 
     /**
@@ -106,6 +109,7 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
      *
      * @param   minimumCapacity   the minimum desired capacity.
      */
+    //字节长度扩容。新容量n为：原字符串长度的2倍 + 2。如果n < minimumCapacity，则新容量为minimumCapacity
     public void ensureCapacity(int minimumCapacity) {
         if (minimumCapacity > 0)
             ensureCapacityInternal(minimumCapacity);
@@ -126,9 +130,13 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
      * size check or synchronization.
      */
     void expandCapacity(int minimumCapacity) {
+        //新容量
         int newCapacity = value.length * 2 + 2;
+
+        //如果新容量少于minimumCapacity，则新容量赋值为：minimumCapacity
         if (newCapacity - minimumCapacity < 0)
             newCapacity = minimumCapacity;
+
         if (newCapacity < 0) {
             if (minimumCapacity < 0) // overflow
                 throw new OutOfMemoryError();
@@ -415,10 +423,15 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
      * @return  a reference to this object.
      */
     public AbstractStringBuilder append(String str) {
+        //追加的字符串为空时，则在调用者后面追加"null"字符串
         if (str == null)
             return appendNull();
+
         int len = str.length();
+        //字节数组扩容
         ensureCapacityInternal(count + len);
+
+        //将str的内部字节数组从srcBegin位置开始拷贝len个字节到调用者的内部字节数组中
         str.getChars(0, len, value, count);
         count += len;
         return this;
@@ -724,6 +737,7 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
      *             is negative, greater than {@code length()}, or
      *             greater than {@code end}.
      */
+    //删除[start, end) 之间的字节
     public AbstractStringBuilder delete(int start, int end) {
         if (start < 0)
             throw new StringIndexOutOfBoundsException(start);
@@ -899,6 +913,7 @@ abstract class AbstractStringBuilder implements Appendable, CharSequence {
      *             {@code length()}, or {@code start} is
      *             greater than {@code end}.
      */
+    //截取 [start, end) 之间的字节
     public String substring(int start, int end) {
         if (start < 0)
             throw new StringIndexOutOfBoundsException(start);

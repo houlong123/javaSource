@@ -73,6 +73,7 @@ package java.lang;
  * @see         String
  * @since       1.5
  */
+//该类为非线程安全类，里面的实现逻辑全都是调用父类的实现
 public final class StringBuilder
     extends AbstractStringBuilder
     implements java.io.Serializable, CharSequence
