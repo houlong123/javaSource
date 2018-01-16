@@ -95,6 +95,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      * @throws ClassCastException   {@inheritDoc}
      * @throws NullPointerException {@inheritDoc}
      */
+    //通过获取迭代器，然后依次与待比较对象进行比较
     public boolean contains(Object o) {
         Iterator<E> it = iterator();
         if (o==null) {
@@ -133,13 +134,21 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      */
     public Object[] toArray() {
         // Estimate size of array; be prepared to see more or fewer elements
+        //根据当前数组大小创建数组
         Object[] r = new Object[size()];
+
+        //获取迭代器
         Iterator<E> it = iterator();
+
+        //根据新建数组大小，依次将元素放入新数组中
         for (int i = 0; i < r.length; i++) {
+            //在遍历的过程中，出现元素个数比预计的少，则直接重新拷贝（可能出现其他线程操作了该集合的元素）
             if (! it.hasNext()) // fewer elements than expected
                 return Arrays.copyOf(r, i);
             r[i] = it.next();
         }
+
+        //在将新数组填充完后，如果集合中依然有元素，则扩容继续填充；否则，直接返回新建数组
         return it.hasNext() ? finishToArray(r, it) : r;
     }
 
@@ -174,28 +183,37 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     public <T> T[] toArray(T[] a) {
         // Estimate size of array; be prepared to see more or fewer elements
         int size = size();
+
+        //如果参数a 的大小大于集合大小size的话，则直接使用a ;否则，通过反射，新创建一个大小为size，类型与a相同的数组
         T[] r = a.length >= size ? a :
                   (T[])java.lang.reflect.Array
                   .newInstance(a.getClass().getComponentType(), size);
+
         Iterator<E> it = iterator();
 
         for (int i = 0; i < r.length; i++) {
+
+            //比预想中的元素个数少
             if (! it.hasNext()) { // fewer elements than expected
+                //如果不是新建的数组，则使用null值填充
                 if (a == r) {
                     r[i] = null; // null-terminate
-                } else if (a.length < i) {
+                } else if (a.length < i) {  //如果使用的是新建数组，则截取部分数组返回
                     return Arrays.copyOf(r, i);
-                } else {
+                } else {    //a数组可以容下所有元素
+                    //从新建数组中拷贝元素到a中
                     System.arraycopy(r, 0, a, 0, i);
+                    //将a数组空余的位置null
                     if (a.length > i) {
                         a[i] = null;
                     }
                 }
                 return a;
             }
+
             r[i] = (T)it.next();
         }
-        // more elements than expected
+        //比预期有更多元素，扩容继续填充   more elements than expected
         return it.hasNext() ? finishToArray(r, it) : r;
     }
 
@@ -220,18 +238,23 @@ public abstract class AbstractCollection<E> implements Collection<E> {
     @SuppressWarnings("unchecked")
     private static <T> T[] finishToArray(T[] r, Iterator<?> it) {
         int i = r.length;
-        while (it.hasNext()) {
+        while (it.hasNext()) {  //如果遍历器中依然有元素
             int cap = r.length;
+            //该处的作用是：首次遍历时，将原数组大小进行扩容
             if (i == cap) {
+                //将元数组大小扩容：新增加(cap >> 1) + 1
                 int newCap = cap + (cap >> 1) + 1;
                 // overflow-conscious code
+                //如果新扩容后的数组大小大于MAX_ARRAY_SIZE，则重新设置新扩容后的数组大小
                 if (newCap - MAX_ARRAY_SIZE > 0)
                     newCap = hugeCapacity(cap + 1);
+
+                //重新分配数组
                 r = Arrays.copyOf(r, newCap);
             }
             r[i++] = (T)it.next();
         }
-        // trim if overallocated
+        // trim if overallocated  如果分配空间过多，则去除多余的
         return (i == r.length) ? r : Arrays.copyOf(r, i);
     }
 
@@ -278,6 +301,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      * @throws ClassCastException            {@inheritDoc}
      * @throws NullPointerException          {@inheritDoc}
      */
+    //该方法的实现，与contains方法的逻辑一致，只不过在包含的时候，会删除元素
     public boolean remove(Object o) {
         Iterator<E> it = iterator();
         if (o==null) {
@@ -313,6 +337,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      * @throws NullPointerException          {@inheritDoc}
      * @see #contains(Object)
      */
+    //内部循环调用contains方法，有一个元素不包含，返回FALSE
     public boolean containsAll(Collection<?> c) {
         for (Object e : c)
             if (!contains(e))
@@ -338,6 +363,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      *
      * @see #add(Object)
      */
+    //模板方法，内部循环调用add方法，在Collection类中，add()方法默认抛异常，具体逻辑由子类实现
     public boolean addAll(Collection<? extends E> c) {
         boolean modified = false;
         for (E e : c)
@@ -367,11 +393,14 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
+    //该方法功能：获取调用者集合中所有不在参数集合c的元素（调用者的差集）
     public boolean removeAll(Collection<?> c) {
         Objects.requireNonNull(c);
         boolean modified = false;
         Iterator<?> it = iterator();
+        //遍历集合
         while (it.hasNext()) {
+            //参数集合c中包含元素，则从调用者集合中删除该元素
             if (c.contains(it.next())) {
                 it.remove();
                 modified = true;
@@ -401,11 +430,13 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      * @see #remove(Object)
      * @see #contains(Object)
      */
+    //该方法实现功能为：获取两集合的交集（交集）
     public boolean retainAll(Collection<?> c) {
         Objects.requireNonNull(c);
         boolean modified = false;
         Iterator<E> it = iterator();
         while (it.hasNext()) {
+            //调用者集合中的元素不在参数集合c中，则将该元素从调用者集合中移除
             if (!c.contains(it.next())) {
                 it.remove();
                 modified = true;
@@ -429,6 +460,7 @@ public abstract class AbstractCollection<E> implements Collection<E> {
      *
      * @throws UnsupportedOperationException {@inheritDoc}
      */
+    //清空集合
     public void clear() {
         Iterator<E> it = iterator();
         while (it.hasNext()) {
