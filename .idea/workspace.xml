@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="341e786f-fb75-4fbe-b813-5adf4e6723d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/AbstractList.java" afterPath="$PROJECT_DIR$/src/java/util/AbstractList.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/ArrayList.java" afterPath="$PROJECT_DIR$/src/java/util/ArrayList.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -23,21 +21,21 @@
       <file leaf-file-name="ArrayList.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="509" column="43" lean-forward="true" selection-start-line="509" selection-start-column="43" selection-end-line="509" selection-end-column="43" />
+            <state relative-caret-position="736">
+              <caret line="131" column="70" lean-forward="false" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
               <folding>
-                <element signature="e#6382#6383#0" expanded="true" />
-                <element signature="e#6450#6451#0" expanded="true" />
-                <element signature="e#11411#11412#0" expanded="true" />
-                <element signature="e#11449#11450#0" expanded="true" />
-                <element signature="e#16350#16351#0" expanded="true" />
-                <element signature="e#16395#16396#0" expanded="true" />
-                <element signature="e#33607#33608#0" expanded="true" />
-                <element signature="e#33652#33653#0" expanded="true" />
-                <element signature="e#36224#36225#0" expanded="true" />
-                <element signature="e#36261#36262#0" expanded="true" />
-                <element signature="e#36299#36300#0" expanded="true" />
-                <element signature="e#36340#36341#0" expanded="true" />
+                <element signature="e#6516#6517#0" expanded="true" />
+                <element signature="e#6584#6585#0" expanded="true" />
+                <element signature="e#11545#11546#0" expanded="true" />
+                <element signature="e#11583#11584#0" expanded="true" />
+                <element signature="e#16484#16485#0" expanded="true" />
+                <element signature="e#16529#16530#0" expanded="true" />
+                <element signature="e#33741#33742#0" expanded="true" />
+                <element signature="e#33786#33787#0" expanded="true" />
+                <element signature="e#36358#36359#0" expanded="true" />
+                <element signature="e#36395#36396#0" expanded="true" />
+                <element signature="e#36433#36434#0" expanded="true" />
+                <element signature="e#36474#36475#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -706,12 +704,12 @@
       <workItem from="1515745927926" duration="5518000" />
       <workItem from="1515980676756" duration="9850000" />
       <workItem from="1516081265146" duration="9413000" />
-      <workItem from="1516161086735" duration="9679000" />
+      <workItem from="1516161086735" duration="9956000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278122000" />
+    <option name="totallyTimeSpent" value="278399000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-721" y="-1417" width="2560" height="1417" extended-state="6" />
@@ -1652,21 +1650,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="509" column="43" lean-forward="true" selection-start-line="509" selection-start-column="43" selection-end-line="509" selection-end-column="43" />
+        <state relative-caret-position="736">
+          <caret line="131" column="70" lean-forward="false" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
           <folding>
-            <element signature="e#6382#6383#0" expanded="true" />
-            <element signature="e#6450#6451#0" expanded="true" />
-            <element signature="e#11411#11412#0" expanded="true" />
-            <element signature="e#11449#11450#0" expanded="true" />
-            <element signature="e#16350#16351#0" expanded="true" />
-            <element signature="e#16395#16396#0" expanded="true" />
-            <element signature="e#33607#33608#0" expanded="true" />
-            <element signature="e#33652#33653#0" expanded="true" />
-            <element signature="e#36224#36225#0" expanded="true" />
-            <element signature="e#36261#36262#0" expanded="true" />
-            <element signature="e#36299#36300#0" expanded="true" />
-            <element signature="e#36340#36341#0" expanded="true" />
+            <element signature="e#6516#6517#0" expanded="true" />
+            <element signature="e#6584#6585#0" expanded="true" />
+            <element signature="e#11545#11546#0" expanded="true" />
+            <element signature="e#11583#11584#0" expanded="true" />
+            <element signature="e#16484#16485#0" expanded="true" />
+            <element signature="e#16529#16530#0" expanded="true" />
+            <element signature="e#33741#33742#0" expanded="true" />
+            <element signature="e#33786#33787#0" expanded="true" />
+            <element signature="e#36358#36359#0" expanded="true" />
+            <element signature="e#36395#36396#0" expanded="true" />
+            <element signature="e#36433#36434#0" expanded="true" />
+            <element signature="e#36474#36475#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -117,6 +117,7 @@ public class ArrayList<E> extends AbstractList<E>
     /**
      * Shared empty array instance used for empty instances.
      */
+    //在创建ArrayList时，如果传递的数据容量为0，则使用该空实例
     private static final Object[] EMPTY_ELEMENTDATA = {};
 
     /**
@@ -124,6 +125,7 @@ public class ArrayList<E> extends AbstractList<E>
      * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
      * first element is added.
      */
+    //在创建ArrayList时，如果没有传递参数，则使用该空实例。在添加元素时，如果数组为DEFAULTCAPACITY_EMPTY_ELEMENTDATA，则默认数组大小为10
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 
     /**
