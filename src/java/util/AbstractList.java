@@ -261,7 +261,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * @throws IndexOutOfBoundsException     {@inheritDoc}
      */
     public boolean addAll(int index, Collection<? extends E> c) {
-        //校验index是否有误
+        //校验index是否有误，索引的index有效范围为：[0, size]
         rangeCheckForAdd(index);
 
         boolean modified = false;

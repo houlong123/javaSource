@@ -249,6 +249,7 @@ public class ArrayList<E> extends AbstractList<E>
      * Attempts to allocate larger arrays may result in
      * OutOfMemoryError: Requested array size exceeds VM limit
      */
+    //数组最多存储容量
     private static final int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8;
 
     /**
