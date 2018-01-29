@@ -32,7 +32,7 @@ import java.io.InvalidObjectException;
  * (actually a <tt>HashMap</tt> instance).  It makes no guarantees as to the
  * iteration order of the set; in particular, it does not guarantee that the
  * order will remain constant over time.  This class permits the <tt>null</tt>
- * element.
+ * element.（HashSet是一个实现了Set接口，内部由一个哈希表支持，并允许存储null值的无序集合）
  *
  * <p>This class offers constant time performance for the basic operations
  * (<tt>add</tt>, <tt>remove</tt>, <tt>contains</tt> and <tt>size</tt>),
@@ -92,15 +92,18 @@ public class HashSet<E>
 {
     static final long serialVersionUID = -5024744406713321676L;
 
+    //内部维持一个HaahMap对象
     private transient HashMap<E,Object> map;
 
     // Dummy value to associate with an Object in the backing Map
+    // 内部HaahMap对象存储的值
     private static final Object PRESENT = new Object();
 
     /**
      * Constructs a new, empty set; the backing <tt>HashMap</tt> instance has
      * default initial capacity (16) and load factor (0.75).
      */
+    //默认构造一个新的空set集合。内部的HashMap对象实现默认构造，其中初始化大小为16，加载因子为0.75
     public HashSet() {
         map = new HashMap<>();
     }
@@ -115,7 +118,9 @@ public class HashSet<E>
      * @throws NullPointerException if the specified collection is null
      */
     public HashSet(Collection<? extends E> c) {
+        //初始化内部HashMap集合。默认加载因子为0.75
         map = new HashMap<>(Math.max((int) (c.size()/.75f) + 1, 16));
+        //模板方法，内部循环调用add方法，在Collection类中，add()方法默认抛异常，具体逻辑由子类实现
         addAll(c);
     }
 
@@ -128,6 +133,7 @@ public class HashSet<E>
      * @throws     IllegalArgumentException if the initial capacity is less
      *             than zero, or if the load factor is nonpositive
      */
+    //使用指定大小和加载因子创建Set集合。
     public HashSet(int initialCapacity, float loadFactor) {
         map = new HashMap<>(initialCapacity, loadFactor);
     }
@@ -157,6 +163,7 @@ public class HashSet<E>
      * @throws     IllegalArgumentException if the initial capacity is less
      *             than zero, or if the load factor is nonpositive
      */
+    //构造一个新的空链接哈希Set。为了区别HashSet(int initialCapacity, float loadFactor)，加了个无用参数。该构造函数在构造LinkedHashSet对象时用到。
     HashSet(int initialCapacity, float loadFactor, boolean dummy) {
         map = new LinkedHashMap<>(initialCapacity, loadFactor);
     }

@@ -166,10 +166,11 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
      * @see #contains(Object)
      */
     public boolean removeAll(Collection<?> c) {
+        //待删除集合不能为null
         Objects.requireNonNull(c);
         boolean modified = false;
 
-        if (size() > c.size()) {
+        if (size() > c.size()) {    //在待删除集合的个数小于方法调用者的时候，遍历待删除集合
             for (Iterator<?> i = c.iterator(); i.hasNext(); )
                 modified |= remove(i.next());
         } else {
