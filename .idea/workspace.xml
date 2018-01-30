@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="341e786f-fb75-4fbe-b813-5adf4e6723d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/AbstractSet.java" afterPath="$PROJECT_DIR$/src/java/util/AbstractSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/HashSet.java" afterPath="$PROJECT_DIR$/src/java/util/HashSet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/Set.java" afterPath="$PROJECT_DIR$/src/java/util/Set.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/AbstractMap.java" afterPath="$PROJECT_DIR$/src/java/util/AbstractMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/Map.java" afterPath="$PROJECT_DIR$/src/java/util/Map.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,76 +20,66 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AbstractCollection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/AbstractCollection.java">
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/util/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="365" column="59" lean-forward="true" selection-start-line="365" selection-start-column="4" selection-end-line="365" selection-end-column="59" />
+            <state relative-caret-position="468">
+              <caret line="335" column="54" lean-forward="true" selection-start-line="335" selection-start-column="54" selection-end-line="335" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comparator.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Comparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="426">
+              <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortedMap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/util/SortedMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractMap.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/util/AbstractMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="597" column="0" lean-forward="true" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
+              <folding>
+                <element signature="e#2471#2472#0" expanded="true" />
+                <element signature="e#2511#2512#0" expanded="true" />
+                <element signature="e#6733#6734#0" expanded="true" />
+                <element signature="e#6790#6791#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="471" column="42" lean-forward="true" selection-start-line="471" selection-start-column="42" selection-end-line="471" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="AbstractSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/AbstractSet.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="888">
-              <caret line="175" column="16" lean-forward="true" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeSet.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/util/TreeSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="107" column="5" lean-forward="true" selection-start-line="105" selection-start-column="4" selection-end-line="107" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NavigableSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/NavigableSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SortedSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/SortedSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="128" column="54" lean-forward="false" selection-start-line="128" selection-start-column="54" selection-end-line="128" selection-end-column="54" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LinkedHashSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-              <folding>
-                <element signature="e#5516#5517#0" expanded="true" />
-                <element signature="e#5572#5573#0" expanded="true" />
-                <element signature="e#5949#5950#0" expanded="true" />
-                <element signature="e#5999#6000#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HashSet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/HashSet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="326" column="79" lean-forward="true" selection-start-line="326" selection-start-column="79" selection-end-line="326" selection-end-column="79" />
+            <state relative-caret-position="328">
+              <caret line="57" column="58" lean-forward="false" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -99,28 +88,8 @@
       <file leaf-file-name="AbstractCollection.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="342" column="20" lean-forward="false" selection-start-line="342" selection-start-column="19" selection-end-line="342" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Set.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Set.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="606">
-              <caret line="383" column="19" lean-forward="true" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="797" column="30" lean-forward="false" selection-start-line="797" selection-start-column="20" selection-end-line="797" selection-end-column="30" />
+            <state relative-caret-position="186">
+              <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -196,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/java/lang/StringBuffer.java" />
         <option value="$PROJECT_DIR$/src/java/lang/Integer.java" />
         <option value="$PROJECT_DIR$/src/java/util/Collection.java" />
-        <option value="$PROJECT_DIR$/src/java/util/AbstractMap.java" />
         <option value="$PROJECT_DIR$/src/java/util/AbstractCollection.java" />
         <option value="$PROJECT_DIR$/src/java/util/LinkedList.java" />
         <option value="$PROJECT_DIR$/src/java/util/ArrayList.java" />
@@ -205,6 +173,8 @@
         <option value="$PROJECT_DIR$/src/java/util/AbstractSet.java" />
         <option value="$PROJECT_DIR$/src/java/util/HashSet.java" />
         <option value="$PROJECT_DIR$/src/java/util/LinkedHashSet.java" />
+        <option value="$PROJECT_DIR$/src/java/util/AbstractMap.java" />
+        <option value="$PROJECT_DIR$/src/java/util/Map.java" />
       </list>
     </option>
   </component>
@@ -235,7 +205,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -410,8 +380,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -857,12 +827,13 @@
       <workItem from="1516757678398" duration="1121000" />
       <workItem from="1516774299891" duration="29000" />
       <workItem from="1516943899321" duration="9179000" />
-      <workItem from="1517194354353" duration="5628000" />
+      <workItem from="1517194354353" duration="6498000" />
+      <workItem from="1517295484138" duration="10280000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="325679000" />
+    <option name="totallyTimeSpent" value="336829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-721" y="-1417" width="2560" height="1417" extended-state="6" />
@@ -917,55 +888,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/WeakHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2560">
-          <caret line="156" column="7" lean-forward="false" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Dictionary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/lang/Comparable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1440">
-          <caret line="95" column="24" lean-forward="false" selection-start-line="95" selection-start-column="17" selection-end-line="95" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2120">
-          <caret line="134" column="59" lean-forward="false" selection-start-line="134" selection-start-column="59" selection-end-line="134" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/Queue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2200">
-          <caret line="143" column="22" lean-forward="false" selection-start-line="143" selection-start-column="22" selection-end-line="143" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ArrayBlockingQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="156" column="7" lean-forward="true" selection-start-line="156" selection-start-column="7" selection-end-line="156" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/reflect/Array.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -1415,7 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="17" selection-end-line="53" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,7 +1344,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="59" column="17" lean-forward="false" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1438,9 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3400">
           <caret line="193" column="12" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="12" />
-          <folding>
-            <element signature="e#0#7488#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1540,7 +1457,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="600" column="28" lean-forward="false" selection-start-line="600" selection-start-column="28" selection-end-line="600" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1548,23 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="77" column="33" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#11950#0" expanded="false" />
-            <element signature="e#2871#2872#0" expanded="false" />
-            <element signature="e#2896#2897#0" expanded="false" />
-            <element signature="e#3272#3273#0" expanded="false" />
-            <element signature="e#3303#3304#0" expanded="false" />
-            <element signature="e#4161#4162#0" expanded="false" />
-            <element signature="e#4211#4212#0" expanded="false" />
-            <element signature="e#10229#10230#0" expanded="false" />
-            <element signature="e#10270#10271#0" expanded="false" />
-            <element signature="e#10337#10338#0" expanded="false" />
-            <element signature="e#10389#10390#0" expanded="false" />
-            <element signature="e#10445#10446#0" expanded="false" />
-            <element signature="e#10490#10491#0" expanded="false" />
-            <element signature="e#10561#10562#0" expanded="false" />
-            <element signature="e#10617#10618#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1572,44 +1471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14440">
           <caret line="754" column="0" lean-forward="false" selection-start-line="754" selection-start-column="0" selection-end-line="754" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#56923#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#1388#1389#0" expanded="false" />
-            <element signature="e#1430#1431#0" expanded="false" />
-            <element signature="e#1649#1650#0" expanded="false" />
-            <element signature="e#1677#1678#0" expanded="false" />
-            <element signature="e#1935#1936#0" expanded="false" />
-            <element signature="e#1970#1971#0" expanded="false" />
-            <element signature="e#14989#14990#0" expanded="false" />
-            <element signature="e#15039#15040#0" expanded="false" />
-            <element signature="e#32694#32695#0" expanded="false" />
-            <element signature="e#32740#32741#0" expanded="false" />
-            <element signature="e#33709#33710#0" expanded="false" />
-            <element signature="e#33753#33754#0" expanded="false" />
-            <element signature="e#37501#37502#0" expanded="false" />
-            <element signature="e#37559#37560#0" expanded="false" />
-            <element signature="e#46235#46236#0" expanded="false" />
-            <element signature="e#46291#46292#0" expanded="false" />
-            <element signature="e#48245#48246#0" expanded="false" />
-            <element signature="e#48301#48302#0" expanded="false" />
-            <element signature="e#49183#49184#0" expanded="false" />
-            <element signature="e#49239#49240#0" expanded="false" />
-            <element signature="e#50125#50126#0" expanded="false" />
-            <element signature="e#50181#50182#0" expanded="false" />
-            <element signature="e#51071#51072#0" expanded="false" />
-            <element signature="e#51127#51128#0" expanded="false" />
-            <element signature="e#51771#51772#0" expanded="false" />
-            <element signature="e#51809#51810#0" expanded="false" />
-            <element signature="e#52585#52586#0" expanded="false" />
-            <element signature="e#52655#52656#0" expanded="false" />
-            <element signature="e#53425#53426#0" expanded="false" />
-            <element signature="e#53471#53472#0" expanded="false" />
-            <element signature="e#54170#54171#0" expanded="false" />
-            <element signature="e#54244#54245#0" expanded="false" />
-            <element signature="e#56890#56891#0" expanded="false" />
-            <element signature="e#56918#56919#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1617,14 +1478,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8040">
           <caret line="433" column="70" lean-forward="true" selection-start-line="433" selection-start-column="70" selection-end-line="433" selection-end-column="70" />
-          <folding>
-            <element signature="e#9572#9573#0" expanded="false" />
-            <element signature="e#9600#9601#0" expanded="false" />
-            <element signature="e#12871#12872#0" expanded="false" />
-            <element signature="e#12909#12910#0" expanded="false" />
-            <element signature="e#25784#25785#0" expanded="false" />
-            <element signature="e#25811#25812#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1632,11 +1485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="68" column="22" lean-forward="false" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#9345#0" expanded="false" />
-            <element signature="e#8834#8835#0" expanded="false" />
-            <element signature="e#8871#8872#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1689,7 +1537,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11500">
           <caret line="620" column="23" lean-forward="false" selection-start-line="620" selection-start-column="16" selection-end-line="620" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1697,7 +1544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13600">
           <caret line="703" column="70" lean-forward="false" selection-start-line="703" selection-start-column="70" selection-end-line="703" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1705,66 +1551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
           <caret line="3207" column="28" lean-forward="false" selection-start-line="3207" selection-start-column="28" selection-end-line="3207" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#227755#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3370#3371#0" expanded="false" />
-            <element signature="e#3446#3447#0" expanded="false" />
-            <element signature="e#5027#5028#0" expanded="false" />
-            <element signature="e#5098#5099#0" expanded="false" />
-            <element signature="e#6903#6904#0" expanded="false" />
-            <element signature="e#6974#6975#0" expanded="false" />
-            <element signature="e#8781#8782#0" expanded="false" />
-            <element signature="e#8852#8853#0" expanded="false" />
-            <element signature="e#10659#10660#0" expanded="false" />
-            <element signature="e#10730#10731#0" expanded="false" />
-            <element signature="e#12536#12537#0" expanded="false" />
-            <element signature="e#12595#12596#0" expanded="false" />
-            <element signature="e#14928#14929#0" expanded="false" />
-            <element signature="e#14999#15000#0" expanded="false" />
-            <element signature="e#17889#17890#0" expanded="false" />
-            <element signature="e#17960#17961#0" expanded="false" />
-            <element signature="e#84738#84739#0" expanded="false" />
-            <element signature="e#84795#84796#0" expanded="false" />
-            <element signature="e#88329#88330#0" expanded="false" />
-            <element signature="e#88386#88387#0" expanded="false" />
-            <element signature="e#91921#91922#0" expanded="false" />
-            <element signature="e#91978#91979#0" expanded="false" />
-            <element signature="e#95523#95524#0" expanded="false" />
-            <element signature="e#95580#95581#0" expanded="false" />
-            <element signature="e#99118#99119#0" expanded="false" />
-            <element signature="e#99175#99176#0" expanded="false" />
-            <element signature="e#102793#102794#0" expanded="false" />
-            <element signature="e#102850#102851#0" expanded="false" />
-            <element signature="e#107069#107070#0" expanded="false" />
-            <element signature="e#107126#107127#0" expanded="false" />
-            <element signature="e#111724#111725#0" expanded="false" />
-            <element signature="e#111781#111782#0" expanded="false" />
-            <element signature="e#177013#177014#0" expanded="false" />
-            <element signature="e#177054#177055#0" expanded="false" />
-            <element signature="e#177353#177354#0" expanded="false" />
-            <element signature="e#177410#177411#0" expanded="false" />
-            <element signature="e#177457#177458#0" expanded="false" />
-            <element signature="e#177496#177497#0" expanded="false" />
-            <element signature="e#177551#177552#0" expanded="false" />
-            <element signature="e#177591#177592#0" expanded="false" />
-            <element signature="e#178082#178083#0" expanded="false" />
-            <element signature="e#178121#178122#0" expanded="false" />
-            <element signature="e#178785#178786#0" expanded="false" />
-            <element signature="e#178832#178833#0" expanded="false" />
-            <element signature="e#178897#178898#0" expanded="false" />
-            <element signature="e#178976#178977#0" expanded="false" />
-            <element signature="e#179525#179526#0" expanded="false" />
-            <element signature="e#179566#179567#0" expanded="false" />
-            <element signature="e#223144#223145#0" expanded="false" />
-            <element signature="e#223197#223198#0" expanded="false" />
-            <element signature="e#224394#224395#0" expanded="false" />
-            <element signature="e#224447#224448#0" expanded="false" />
-            <element signature="e#225606#225607#0" expanded="false" />
-            <element signature="e#225659#225660#0" expanded="false" />
-            <element signature="e#226830#226831#0" expanded="false" />
-            <element signature="e#226883#226884#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1772,7 +1558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="102" column="15" lean-forward="true" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1788,7 +1573,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="200" column="24" lean-forward="false" selection-start-line="200" selection-start-column="24" selection-end-line="200" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1796,13 +1580,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="426">
           <caret line="159" column="4" lean-forward="false" selection-start-line="159" selection-start-column="4" selection-end-line="159" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Set.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="606">
+        <state relative-caret-position="7200">
           <caret line="383" column="19" lean-forward="true" selection-start-line="383" selection-start-column="4" selection-end-line="383" selection-end-column="19" />
           <folding />
         </state>
@@ -1818,39 +1601,31 @@
     </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
+        <state relative-caret-position="15000">
           <caret line="797" column="30" lean-forward="false" selection-start-line="797" selection-start-column="20" selection-end-line="797" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="342" column="20" lean-forward="false" selection-start-line="342" selection-start-column="19" selection-end-line="342" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/AbstractSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="888">
-          <caret line="175" column="16" lean-forward="true" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
+        <state relative-caret-position="3040">
+          <caret line="175" column="16" lean-forward="false" selection-start-line="175" selection-start-column="16" selection-end-line="175" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/AbstractCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="365" column="59" lean-forward="true" selection-start-line="365" selection-start-column="4" selection-end-line="365" selection-end-column="59" />
+        <state relative-caret-position="6760">
+          <caret line="365" column="59" lean-forward="false" selection-start-line="365" selection-start-column="4" selection-end-line="365" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/HashSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
+        <state relative-caret-position="5660">
           <caret line="326" column="79" lean-forward="true" selection-start-line="326" selection-start-column="79" selection-end-line="326" selection-end-column="79" />
           <folding />
         </state>
@@ -1858,15 +1633,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/NavigableSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="85" column="45" lean-forward="true" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
+        <state relative-caret-position="1040">
+          <caret line="85" column="45" lean-forward="false" selection-start-line="85" selection-start-column="45" selection-end-line="85" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/SortedSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
+        <state relative-caret-position="2100">
           <caret line="128" column="54" lean-forward="false" selection-start-line="128" selection-start-column="54" selection-end-line="128" selection-end-column="54" />
           <folding />
         </state>
@@ -1874,22 +1649,91 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="155" column="0" lean-forward="true" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+        <state relative-caret-position="2520">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
           <folding>
-            <element signature="e#5516#5517#0" expanded="true" />
-            <element signature="e#5572#5573#0" expanded="true" />
-            <element signature="e#5949#5950#0" expanded="true" />
-            <element signature="e#5999#6000#0" expanded="true" />
+            <element signature="e#5516#5517#0" expanded="false" />
+            <element signature="e#5572#5573#0" expanded="false" />
+            <element signature="e#5949#5950#0" expanded="false" />
+            <element signature="e#5999#6000#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="620">
-          <caret line="107" column="5" lean-forward="true" selection-start-line="105" selection-start-column="4" selection-end-line="107" selection-end-column="5" />
+        <state relative-caret-position="-300">
+          <caret line="116" column="51" lean-forward="false" selection-start-line="116" selection-start-column="51" selection-end-line="116" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="57" column="58" lean-forward="false" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="60" column="22" lean-forward="false" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/IdentityHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="1245" column="38" lean-forward="false" selection-start-line="1245" selection-start-column="38" selection-end-line="1245" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="335" column="54" lean-forward="true" selection-start-line="335" selection-start-column="54" selection-end-line="335" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="471" column="42" lean-forward="true" selection-start-line="471" selection-start-column="42" selection-end-line="471" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/SortedMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="77" column="32" lean-forward="true" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="597" column="0" lean-forward="true" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
+          <folding>
+            <element signature="e#2471#2472#0" expanded="true" />
+            <element signature="e#2511#2512#0" expanded="true" />
+            <element signature="e#6733#6734#0" expanded="true" />
+            <element signature="e#6790#6791#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

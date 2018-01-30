@@ -35,13 +35,13 @@ import java.util.Map.Entry;
  * returns a set-view of the map's mappings.  Typically, the returned set
  * will, in turn, be implemented atop <tt>AbstractSet</tt>.  This set should
  * not support the <tt>add</tt> or <tt>remove</tt> methods, and its iterator
- * should not support the <tt>remove</tt> method.
+ * should not support the <tt>remove</tt> method. （为了实现一个不可修改的Map，需扩展该类并实现entrySet方法，返回的集合不支持add或remove方法，它的迭代器不应该支持remove方法。）
  *
  * <p>To implement a modifiable map, the programmer must additionally override
  * this class's <tt>put</tt> method (which otherwise throws an
  * <tt>UnsupportedOperationException</tt>), and the iterator returned by
  * <tt>entrySet().iterator()</tt> must additionally implement its
- * <tt>remove</tt> method.
+ * <tt>remove</tt> method.  （为了实现一个可修改的Map，需重写该类put方法，且entrySet().iterator()方法的迭代器必须另外实现它的remove方法。）
  *
  * <p>The programmer should generally provide a void (no argument) and map
  * constructor, as per the recommendation in the <tt>Map</tt> interface
@@ -81,6 +81,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @implSpec
      * This implementation returns <tt>entrySet().size()</tt>.
      */
+    //内部调用entrySet()方法，返回entrySet()结果的大小
     public int size() {
         return entrySet().size();
     }
@@ -109,7 +110,10 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @throws NullPointerException {@inheritDoc}
      */
     public boolean containsValue(Object value) {
+        //通过entrySet()方法，获取内部元素的迭代器
         Iterator<Entry<K,V>> i = entrySet().iterator();
+
+        //由于Map集合的value允许储存null值，因此，在查找指定value是否存在时，需要分两种情况
         if (value==null) {
             while (i.hasNext()) {
                 Entry<K,V> e = i.next();
@@ -142,6 +146,8 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      */
     public boolean containsKey(Object key) {
         Iterator<Entry<K,V>> i = entrySet().iterator();
+
+        //由于Map集合的key允许储存null值，因此，在查找指定key是否存在时，需要分两种情况
         if (key==null) {
             while (i.hasNext()) {
                 Entry<K,V> e = i.next();
@@ -173,7 +179,12 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @throws NullPointerException          {@inheritDoc}
      */
     public V get(Object key) {
+        //通过entrySet()方法，获取内部元素的迭代器
         Iterator<Entry<K,V>> i = entrySet().iterator();
+
+        //由于Map集合的key-value允许存储null值，所以分两种情况查找
+
+        //遍历，然后找到与key所在的Entry对应的value
         if (key==null) {
             while (i.hasNext()) {
                 Entry<K,V> e = i.next();
@@ -205,6 +216,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @throws NullPointerException          {@inheritDoc}
      * @throws IllegalArgumentException      {@inheritDoc}
      */
+    //抛出UnsupportedOperationException异常，对于可修改的Map，需要实现该方法
     public V put(K key, V value) {
         throw new UnsupportedOperationException();
     }
@@ -231,8 +243,13 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @throws ClassCastException            {@inheritDoc}
      * @throws NullPointerException          {@inheritDoc}
      */
+
+    //遍历，通过内部迭代器实现删除操作
     public V remove(Object key) {
+        //通过entrySet()方法，获取内部元素的迭代器
         Iterator<Entry<K,V>> i = entrySet().iterator();
+
+        //遍历数据，找到key所对应的Entry实体
         Entry<K,V> correctEntry = null;
         if (key==null) {
             while (correctEntry==null && i.hasNext()) {
@@ -248,11 +265,14 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
             }
         }
 
+        //找到key所对应的Entry实体后，使用迭代器进行删除
         V oldValue = null;
         if (correctEntry !=null) {
             oldValue = correctEntry.getValue();
             i.remove();
         }
+
+        //返回key对应的value值，如果key所对应的Entry实体不存在，则返回null
         return oldValue;
     }
 
@@ -277,6 +297,8 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @throws IllegalArgumentException      {@inheritDoc}
      */
     public void putAll(Map<? extends K, ? extends V> m) {
+
+        //遍历m，然后将值存储在调用者的Map中
         for (Entry<? extends K, ? extends V> e : m.entrySet())
             put(e.getKey(), e.getValue());
     }
@@ -305,6 +327,8 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * appropriate view the first time this view is requested.  The views are
      * stateless, so there's no reason to create more than one of each.
      */
+
+    //keySet，values都是volatile的，保证了内存可见性。（1. 当写入主存时，使其值无效；2. 防止内存重排序）
     transient volatile Set<K>        keySet;
     transient volatile Collection<V> values;
 
@@ -325,12 +349,18 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * method will not all return the same set.
      */
     public Set<K> keySet() {
+        //在该方法首次调用的时候，会创建keySet
         if (keySet == null) {
             keySet = new AbstractSet<K>() {
+
+                //返回了该map的entrySet()对象的迭代器的包装类
                 public Iterator<K> iterator() {
                     return new Iterator<K>() {
+
+                        //获取entrySet()的迭代器
                         private Iterator<Entry<K,V>> i = entrySet().iterator();
 
+                        //里面的相关方法都有entrySet()的迭代器代理
                         public boolean hasNext() {
                             return i.hasNext();
                         }
@@ -345,6 +375,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
                     };
                 }
 
+                //方法实现都是AbstractMap的相关方法
                 public int size() {
                     return AbstractMap.this.size();
                 }
@@ -382,6 +413,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * method will not all return the same collection.
      */
     public Collection<V> values() {
+        //实现逻辑同keySet()方法一致
         if (values == null) {
             values = new AbstractCollection<V>() {
                 public Iterator<V> iterator() {
@@ -422,6 +454,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
         return values;
     }
 
+    //抽象方法，由子类实现。从上面的代码可以发现，其他方法的实现都是基于该方法
     public abstract Set<Entry<K,V>> entrySet();
 
 
@@ -450,17 +483,26 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      * @return <tt>true</tt> if the specified object is equal to this map
      */
     public boolean equals(Object o) {
+
+        //如果o == this，则直接返回true
         if (o == this)
             return true;
 
+        //如果对象o非Map类型，则直接返回false
         if (!(o instanceof Map))
             return false;
+
+        //如果对象o的大小与调用者的不等，则直接返回false
         Map<?,?> m = (Map<?,?>) o;
         if (m.size() != size())
             return false;
 
+
         try {
+            //获取entrySet()的迭代器
             Iterator<Entry<K,V>> i = entrySet().iterator();
+
+            //遍历调用者Map，依次判断是否相等
             while (i.hasNext()) {
                 Entry<K,V> e = i.next();
                 K key = e.getKey();
@@ -546,6 +588,7 @@ public abstract class AbstractMap<K,V> implements Map<K,V> {
      *
      * @return a shallow copy of this map
      */
+    //AbstractMap实例的浅拷贝。且内部的keySet和values不进行拷贝
     protected Object clone() throws CloneNotSupportedException {
         AbstractMap<?,?> result = (AbstractMap<?,?>)super.clone();
         result.keySet = null;

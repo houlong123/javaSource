@@ -32,7 +32,7 @@ import java.io.Serializable;
 
 /**
  * An object that maps keys to values.  A map cannot contain duplicate keys;
- * each key can map to at most one value.
+ * each key can map to at most one value.  (Map集合中不能保持重复的key)
  *
  * <p>This interface takes the place of the <tt>Dictionary</tt> class, which
  * was a totally abstract class rather than an interface.
@@ -585,6 +585,7 @@ public interface Map<K,V> {
      */
     default V getOrDefault(Object key, V defaultValue) {
         V v;
+        //如果key存在，在返回key对应的value值；否则返回默认值
         return (((v = get(key)) != null) || containsKey(key))
             ? v
             : defaultValue;
