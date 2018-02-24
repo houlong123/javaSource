@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341e786f-fb75-4fbe-b813-5adf4e6723d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/HashMap.java" afterPath="$PROJECT_DIR$/src/java/util/HashMap.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/java/util/LinkedHashMap.java" afterPath="$PROJECT_DIR$/src/java/util/LinkedHashMap.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,76 +19,67 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AbstractMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/AbstractMap.java">
+      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/util/HashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="132" column="7" lean-forward="false" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+            <state relative-caret-position="684">
+              <caret line="1016" column="27" lean-forward="false" selection-start-line="1016" selection-start-column="27" selection-end-line="1016" selection-end-column="27" />
               <folding>
-                <element signature="e#0#29852#0" expanded="false" />
-                <element signature="e#2471#2472#0" expanded="false" />
-                <element signature="e#2511#2512#0" expanded="false" />
-                <element signature="e#2661#2662#0" expanded="false" />
-                <element signature="e#2695#2696#0" expanded="false" />
-                <element signature="e#6733#6734#0" expanded="false" />
-                <element signature="e#6790#6791#0" expanded="false" />
-                <element signature="e#10136#10137#0" expanded="false" />
-                <element signature="e#10170#10171#0" expanded="false" />
-                <element signature="e#11804#11805#0" expanded="false" />
-                <element signature="e#11878#11879#0" expanded="false" />
-                <element signature="e#11921#11922#0" expanded="false" />
-                <element signature="e#12001#12002#0" expanded="false" />
-                <element signature="e#12049#12050#0" expanded="false" />
-                <element signature="e#12115#12116#0" expanded="false" />
-                <element signature="e#12234#12235#0" expanded="false" />
-                <element signature="e#12304#12305#0" expanded="false" />
-                <element signature="e#12348#12349#0" expanded="false" />
-                <element signature="e#12421#12422#0" expanded="false" />
-                <element signature="e#12460#12461#0" expanded="false" />
-                <element signature="e#12524#12525#0" expanded="false" />
-                <element signature="e#12577#12578#0" expanded="false" />
-                <element signature="e#12655#12656#0" expanded="false" />
-                <element signature="e#13823#13824#0" expanded="false" />
-                <element signature="e#13897#13898#0" expanded="false" />
-                <element signature="e#13940#13941#0" expanded="false" />
-                <element signature="e#14022#14023#0" expanded="false" />
-                <element signature="e#14070#14071#0" expanded="false" />
-                <element signature="e#14136#14137#0" expanded="false" />
-                <element signature="e#14214#14215#0" expanded="false" />
-                <element signature="e#14284#14285#0" expanded="false" />
-                <element signature="e#14328#14329#0" expanded="false" />
-                <element signature="e#14401#14402#0" expanded="false" />
-                <element signature="e#14440#14441#0" expanded="false" />
-                <element signature="e#14504#14505#0" expanded="false" />
-                <element signature="e#14557#14558#0" expanded="false" />
-                <element signature="e#14637#14638#0" expanded="false" />
-                <element signature="e#20100#20101#0" expanded="false" />
-                <element signature="e#20162#20163#0" expanded="false" />
-                <element signature="e#22031#22032#0" expanded="false" />
-                <element signature="e#22065#22066#0" expanded="false" />
-                <element signature="e#22246#22247#0" expanded="false" />
-                <element signature="e#22282#22283#0" expanded="false" />
-                <element signature="e#25092#25093#0" expanded="false" />
-                <element signature="e#25140#25141#0" expanded="false" />
-                <element signature="e#26567#26568#0" expanded="false" />
-                <element signature="e#26601#26602#0" expanded="false" />
-                <element signature="e#26782#26783#0" expanded="false" />
-                <element signature="e#26818#26819#0" expanded="false" />
-                <element signature="e#27314#27315#0" expanded="false" />
-                <element signature="e#27379#27380#0" expanded="false" />
-                <element signature="e#29792#29793#0" expanded="false" />
-                <element signature="e#29840#29841#0" expanded="false" />
+                <element signature="e#71766#71767#0" expanded="true" />
+                <element signature="e#71823#71824#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/java/util/HashMap.java">
+      <file leaf-file-name="LinkedHashMap.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="1628" column="47" lean-forward="false" selection-start-line="1628" selection-start-column="39" selection-end-line="1628" selection-end-column="47" />
-              <folding />
+            <state relative-caret-position="364">
+              <caret line="552" column="7" lean-forward="true" selection-start-line="552" selection-start-column="7" selection-end-line="552" selection-end-column="7" />
+              <folding>
+                <element signature="e#20264#20265#0" expanded="true" />
+                <element signature="e#20292#20293#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ForkJoinPool.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ForkJoinPool.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49200">
+              <caret line="2516" column="54" lean-forward="false" selection-start-line="2516" selection-start-column="54" selection-end-line="2516" selection-end-column="54" />
+              <folding>
+                <element signature="e#0#158104#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#38422#38423#0" expanded="false" />
+                <element signature="e#38483#38484#0" expanded="false" />
+                <element signature="e#43228#43229#0" expanded="false" />
+                <element signature="e#43309#43310#0" expanded="false" />
+                <element signature="e#64232#64233#0" expanded="false" />
+                <element signature="e#64275#64276#0" expanded="false" />
+                <element signature="e#120300#120301#0" expanded="false" />
+                <element signature="e#120382#120383#0" expanded="false" />
+                <element signature="e#129276#129277#0" expanded="false" />
+                <element signature="e#129306#129307#0" expanded="false" />
+                <element signature="e#129590#129591#0" expanded="false" />
+                <element signature="e#129616#129617#0" expanded="false" />
+                <element signature="e#130095#130096#0" expanded="false" />
+                <element signature="e#130135#130136#0" expanded="false" />
+                <element signature="e#130505#130506#0" expanded="false" />
+                <element signature="e#130572#130573#0" expanded="false" />
+                <element signature="e#130823#130824#0" expanded="false" />
+                <element signature="e#130872#130873#0" expanded="false" />
+                <element signature="e#132479#132480#0" expanded="false" />
+                <element signature="e#132548#132549#0" expanded="false" />
+                <element signature="e#141687#141688#0" expanded="false" />
+                <element signature="e#141738#141739#0" expanded="false" />
+                <element signature="e#142721#142722#0" expanded="false" />
+                <element signature="e#142770#142771#0" expanded="false" />
+                <element signature="e#146348#146349#0" expanded="false" />
+                <element signature="e#146424#146425#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,9 +87,40 @@
       <file leaf-file-name="ForkJoinTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ForkJoinTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="414" column="42" lean-forward="true" selection-start-line="414" selection-start-column="42" selection-end-line="414" selection-end-column="42" />
-              <folding />
+            <state relative-caret-position="6980">
+              <caret line="397" column="26" lean-forward="false" selection-start-line="397" selection-start-column="26" selection-end-line="397" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#61269#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#36894#36895#0" expanded="false" />
+                <element signature="e#36968#36969#0" expanded="false" />
+                <element signature="e#37005#37006#0" expanded="false" />
+                <element signature="e#37038#37039#0" expanded="false" />
+                <element signature="e#37080#37081#0" expanded="false" />
+                <element signature="e#37136#37137#0" expanded="false" />
+                <element signature="e#37366#37367#0" expanded="false" />
+                <element signature="e#37404#37405#0" expanded="false" />
+                <element signature="e#37698#37699#0" expanded="false" />
+                <element signature="e#37751#37752#0" expanded="false" />
+                <element signature="e#40421#40422#0" expanded="false" />
+                <element signature="e#40458#40459#0" expanded="false" />
+                <element signature="e#44379#44380#0" expanded="false" />
+                <element signature="e#44403#44404#0" expanded="false" />
+                <element signature="e#44608#44609#0" expanded="false" />
+                <element signature="e#44634#44635#0" expanded="false" />
+                <element signature="e#47051#47052#0" expanded="false" />
+                <element signature="e#47128#47129#0" expanded="false" />
+                <element signature="e#49185#49186#0" expanded="false" />
+                <element signature="e#49248#49249#0" expanded="false" />
+                <element signature="e#53435#53436#0" expanded="false" />
+                <element signature="e#53471#53472#0" expanded="false" />
+                <element signature="e#56965#56966#0" expanded="false" />
+                <element signature="e#57035#57036#0" expanded="false" />
+                <element signature="e#58458#58459#0" expanded="false" />
+                <element signature="e#58516#58517#0" expanded="false" />
+                <element signature="e#59509#59510#0" expanded="false" />
+                <element signature="e#59564#59565#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,7 +128,7 @@
       <file leaf-file-name="RecursiveAction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/RecursiveAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1038">
+            <state relative-caret-position="1008">
               <caret line="190" column="28" lean-forward="false" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
               <folding />
             </state>
@@ -144,7 +166,7 @@
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
-              <caret line="1432" column="36" lean-forward="true" selection-start-line="1432" selection-start-column="36" selection-end-line="1432" selection-end-column="36" />
+              <caret line="565" column="27" lean-forward="false" selection-start-line="565" selection-start-column="20" selection-end-line="565" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -154,7 +176,7 @@
         <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/Executors.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1720">
-              <caret line="127" column="25" lean-forward="true" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+              <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
               <folding>
                 <element signature="e#0#31189#0" expanded="false" />
                 <element signature="imports" expanded="false" />
@@ -162,18 +184,6 @@
                 <element signature="e#15254#15255#0" expanded="false" />
                 <element signature="e#17048#17049#0" expanded="false" />
                 <element signature="e#17100#17101#0" expanded="false" />
-                <element signature="e#18643#18726#0" expanded="false" />
-                <element signature="e#18725#18726#0" expanded="false" />
-                <element signature="e#19214#19314#0" expanded="false" />
-                <element signature="e#19313#19314#0" expanded="false" />
-                <element signature="e#22441#22631#0" expanded="false" />
-                <element signature="e#22630#22631#0" expanded="false" />
-                <element signature="e#24090#24830#0" expanded="false" />
-                <element signature="e#24829#24830#0" expanded="false" />
-                <element signature="e#27125#27546#0" expanded="false" />
-                <element signature="e#27228#27507#0" expanded="false" />
-                <element signature="e#27506#27507#0" expanded="false" />
-                <element signature="e#27545#27546#0" expanded="false" />
                 <element signature="e#28433#28434#0" expanded="false" />
                 <element signature="e#28478#28479#0" expanded="false" />
                 <element signature="e#28534#28535#0" expanded="false" />
@@ -189,72 +199,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LinkedHashMap.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5520">
-              <caret line="304" column="9" lean-forward="false" selection-start-line="304" selection-start-column="9" selection-end-line="304" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#29004#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#8798#8799#0" expanded="false" />
-                <element signature="e#8851#8852#0" expanded="false" />
-                <element signature="e#19323#19324#0" expanded="false" />
-                <element signature="e#19351#19352#0" expanded="false" />
-                <element signature="e#20666#20667#0" expanded="false" />
-                <element signature="e#20720#20721#0" expanded="false" />
-                <element signature="e#20845#20846#0" expanded="false" />
-                <element signature="e#20929#20930#0" expanded="false" />
-                <element signature="e#22958#22959#0" expanded="false" />
-                <element signature="e#23014#23015#0" expanded="false" />
-                <element signature="e#25151#25152#0" expanded="false" />
-                <element signature="e#25207#25208#0" expanded="false" />
-                <element signature="e#27675#27676#0" expanded="false" />
-                <element signature="e#27718#27719#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Objects.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Objects.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="96" column="22" lean-forward="false" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-              <folding>
-                <element signature="e#0#10204#0" expanded="false" />
-                <element signature="e#621#622#0" expanded="false" />
-                <element signature="e#704#705#0" expanded="false" />
-                <element signature="e#1410#1411#0" expanded="false" />
-                <element signature="e#1471#1472#0" expanded="false" />
-                <element signature="e#2786#2787#0" expanded="false" />
-                <element signature="e#2837#2838#0" expanded="false" />
-                <element signature="e#3914#3915#0" expanded="false" />
-                <element signature="e#3960#3961#0" expanded="false" />
-                <element signature="e#4400#4401#0" expanded="false" />
-                <element signature="e#4440#4441#0" expanded="false" />
-                <element signature="e#5014#5015#0" expanded="false" />
-                <element signature="e#5077#5078#0" expanded="false" />
-                <element signature="e#5960#5961#0" expanded="false" />
-                <element signature="e#6014#6015#0" expanded="false" />
-                <element signature="e#8380#8381#0" expanded="false" />
-                <element signature="e#8414#8415#0" expanded="false" />
-                <element signature="e#8972#8973#0" expanded="false" />
-                <element signature="e#9006#9007#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Map.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6960">
+            <state relative-caret-position="648">
               <caret line="374" column="14" lean-forward="false" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#53227#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -263,11 +213,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ensureCapacity</find>
-      <find>toStringCache</find>
-      <find>take()</find>
-      <find>previousIndex</find>
-      <find>Iterator</find>
       <find>hasNext()</find>
       <find>modCount</find>
       <find>retainAll</find>
@@ -287,12 +232,17 @@
       <find>addAll</find>
       <find>equals</find>
       <find>untreeify</find>
-      <find>fork</find>
       <find>treeifyBin</find>
       <find>treeify</find>
       <find>find</find>
       <find>removeTreeNode</find>
       <find>containsKey</find>
+      <find>fork</find>
+      <find>remove</find>
+      <find>submit</find>
+      <find>put</find>
+      <find>removeNode</find>
+      <find>containsValue</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -340,6 +290,7 @@
         <option value="$PROJECT_DIR$/src/java/util/Map.java" />
         <option value="$PROJECT_DIR$/src/java/util/concurrent/ForkJoinTask.java" />
         <option value="$PROJECT_DIR$/src/java/util/HashMap.java" />
+        <option value="$PROJECT_DIR$/src/java/util/LinkedHashMap.java" />
       </list>
     </option>
   </component>
@@ -370,9 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -544,9 +493,37 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="concurrent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaSource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javaSource" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -996,12 +973,15 @@
       <workItem from="1517295484138" duration="11967000" />
       <workItem from="1517378500727" duration="13281000" />
       <workItem from="1517455603976" duration="16820000" />
-      <workItem from="1517537465126" duration="4822000" />
+      <workItem from="1517537465126" duration="7175000" />
+      <workItem from="1517810475091" duration="4723000" />
+      <workItem from="1519287949403" duration="946000" />
+      <workItem from="1519437525387" duration="8685000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="373439000" />
+    <option name="totallyTimeSpent" value="390146000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-721" y="-1417" width="2560" height="1417" extended-state="6" />
@@ -1065,20 +1045,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/java/util/ListIterator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3400">
-          <caret line="193" column="12" lean-forward="false" selection-start-line="193" selection-start-column="9" selection-end-line="193" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="348" column="18" lean-forward="false" selection-start-line="348" selection-start-column="18" selection-end-line="348" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/Iterable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -1357,7 +1323,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="77" column="32" lean-forward="false" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1365,7 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8000">
           <caret line="426" column="54" lean-forward="false" selection-start-line="426" selection-start-column="48" selection-end-line="426" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1373,61 +1337,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2100">
           <caret line="132" column="7" lean-forward="false" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#29852#0" expanded="false" />
-            <element signature="e#2471#2472#0" expanded="false" />
-            <element signature="e#2511#2512#0" expanded="false" />
-            <element signature="e#2661#2662#0" expanded="false" />
-            <element signature="e#2695#2696#0" expanded="false" />
-            <element signature="e#6733#6734#0" expanded="false" />
-            <element signature="e#6790#6791#0" expanded="false" />
-            <element signature="e#10136#10137#0" expanded="false" />
-            <element signature="e#10170#10171#0" expanded="false" />
-            <element signature="e#11804#11805#0" expanded="false" />
-            <element signature="e#11878#11879#0" expanded="false" />
-            <element signature="e#11921#11922#0" expanded="false" />
-            <element signature="e#12001#12002#0" expanded="false" />
-            <element signature="e#12049#12050#0" expanded="false" />
-            <element signature="e#12115#12116#0" expanded="false" />
-            <element signature="e#12234#12235#0" expanded="false" />
-            <element signature="e#12304#12305#0" expanded="false" />
-            <element signature="e#12348#12349#0" expanded="false" />
-            <element signature="e#12421#12422#0" expanded="false" />
-            <element signature="e#12460#12461#0" expanded="false" />
-            <element signature="e#12524#12525#0" expanded="false" />
-            <element signature="e#12577#12578#0" expanded="false" />
-            <element signature="e#12655#12656#0" expanded="false" />
-            <element signature="e#13823#13824#0" expanded="false" />
-            <element signature="e#13897#13898#0" expanded="false" />
-            <element signature="e#13940#13941#0" expanded="false" />
-            <element signature="e#14022#14023#0" expanded="false" />
-            <element signature="e#14070#14071#0" expanded="false" />
-            <element signature="e#14136#14137#0" expanded="false" />
-            <element signature="e#14214#14215#0" expanded="false" />
-            <element signature="e#14284#14285#0" expanded="false" />
-            <element signature="e#14328#14329#0" expanded="false" />
-            <element signature="e#14401#14402#0" expanded="false" />
-            <element signature="e#14440#14441#0" expanded="false" />
-            <element signature="e#14504#14505#0" expanded="false" />
-            <element signature="e#14557#14558#0" expanded="false" />
-            <element signature="e#14637#14638#0" expanded="false" />
-            <element signature="e#20100#20101#0" expanded="false" />
-            <element signature="e#20162#20163#0" expanded="false" />
-            <element signature="e#22031#22032#0" expanded="false" />
-            <element signature="e#22065#22066#0" expanded="false" />
-            <element signature="e#22246#22247#0" expanded="false" />
-            <element signature="e#22282#22283#0" expanded="false" />
-            <element signature="e#25092#25093#0" expanded="false" />
-            <element signature="e#25140#25141#0" expanded="false" />
-            <element signature="e#26567#26568#0" expanded="false" />
-            <element signature="e#26601#26602#0" expanded="false" />
-            <element signature="e#26782#26783#0" expanded="false" />
-            <element signature="e#26818#26819#0" expanded="false" />
-            <element signature="e#27314#27315#0" expanded="false" />
-            <element signature="e#27379#27380#0" expanded="false" />
-            <element signature="e#29792#29793#0" expanded="false" />
-            <element signature="e#29840#29841#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1435,59 +1344,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
           <caret line="96" column="22" lean-forward="false" selection-start-line="96" selection-start-column="22" selection-end-line="96" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10204#0" expanded="false" />
-            <element signature="e#621#622#0" expanded="false" />
-            <element signature="e#704#705#0" expanded="false" />
-            <element signature="e#1410#1411#0" expanded="false" />
-            <element signature="e#1471#1472#0" expanded="false" />
-            <element signature="e#2786#2787#0" expanded="false" />
-            <element signature="e#2837#2838#0" expanded="false" />
-            <element signature="e#3914#3915#0" expanded="false" />
-            <element signature="e#3960#3961#0" expanded="false" />
-            <element signature="e#4400#4401#0" expanded="false" />
-            <element signature="e#4440#4441#0" expanded="false" />
-            <element signature="e#5014#5015#0" expanded="false" />
-            <element signature="e#5077#5078#0" expanded="false" />
-            <element signature="e#5960#5961#0" expanded="false" />
-            <element signature="e#6014#6015#0" expanded="false" />
-            <element signature="e#8380#8381#0" expanded="false" />
-            <element signature="e#8414#8415#0" expanded="false" />
-            <element signature="e#8972#8973#0" expanded="false" />
-            <element signature="e#9006#9007#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5520">
-          <caret line="304" column="9" lean-forward="false" selection-start-line="304" selection-start-column="9" selection-end-line="304" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#29004#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#8798#8799#0" expanded="false" />
-            <element signature="e#8851#8852#0" expanded="false" />
-            <element signature="e#19323#19324#0" expanded="false" />
-            <element signature="e#19351#19352#0" expanded="false" />
-            <element signature="e#20666#20667#0" expanded="false" />
-            <element signature="e#20720#20721#0" expanded="false" />
-            <element signature="e#20845#20846#0" expanded="false" />
-            <element signature="e#20929#20930#0" expanded="false" />
-            <element signature="e#22958#22959#0" expanded="false" />
-            <element signature="e#23014#23015#0" expanded="false" />
-            <element signature="e#25151#25152#0" expanded="false" />
-            <element signature="e#25207#25208#0" expanded="false" />
-            <element signature="e#27675#27676#0" expanded="false" />
-            <element signature="e#27718#27719#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/Executors.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1720">
-          <caret line="127" column="25" lean-forward="true" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
+          <caret line="127" column="25" lean-forward="false" selection-start-line="127" selection-start-column="25" selection-end-line="127" selection-end-column="25" />
           <folding>
             <element signature="e#0#31189#0" expanded="false" />
             <element signature="imports" expanded="false" />
@@ -1495,18 +1358,6 @@
             <element signature="e#15254#15255#0" expanded="false" />
             <element signature="e#17048#17049#0" expanded="false" />
             <element signature="e#17100#17101#0" expanded="false" />
-            <element signature="e#18643#18726#0" expanded="false" />
-            <element signature="e#18725#18726#0" expanded="false" />
-            <element signature="e#19214#19314#0" expanded="false" />
-            <element signature="e#19313#19314#0" expanded="false" />
-            <element signature="e#22441#22631#0" expanded="false" />
-            <element signature="e#22630#22631#0" expanded="false" />
-            <element signature="e#24090#24830#0" expanded="false" />
-            <element signature="e#24829#24830#0" expanded="false" />
-            <element signature="e#27125#27546#0" expanded="false" />
-            <element signature="e#27228#27507#0" expanded="false" />
-            <element signature="e#27506#27507#0" expanded="false" />
-            <element signature="e#27545#27546#0" expanded="false" />
             <element signature="e#28433#28434#0" expanded="false" />
             <element signature="e#28478#28479#0" expanded="false" />
             <element signature="e#28534#28535#0" expanded="false" />
@@ -1517,17 +1368,6 @@
             <element signature="e#29811#29812#0" expanded="false" />
             <element signature="e#29847#29848#0" expanded="false" />
             <element signature="e#29887#29888#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6960">
-          <caret line="374" column="14" lean-forward="false" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#53227#0" expanded="false" />
-            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1557,18 +1397,101 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ForkJoinTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6980">
+          <caret line="397" column="26" lean-forward="false" selection-start-line="397" selection-start-column="26" selection-end-line="397" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#61269#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#36894#36895#0" expanded="false" />
+            <element signature="e#36968#36969#0" expanded="false" />
+            <element signature="e#37005#37006#0" expanded="false" />
+            <element signature="e#37038#37039#0" expanded="false" />
+            <element signature="e#37080#37081#0" expanded="false" />
+            <element signature="e#37136#37137#0" expanded="false" />
+            <element signature="e#37366#37367#0" expanded="false" />
+            <element signature="e#37404#37405#0" expanded="false" />
+            <element signature="e#37698#37699#0" expanded="false" />
+            <element signature="e#37751#37752#0" expanded="false" />
+            <element signature="e#40421#40422#0" expanded="false" />
+            <element signature="e#40458#40459#0" expanded="false" />
+            <element signature="e#44379#44380#0" expanded="false" />
+            <element signature="e#44403#44404#0" expanded="false" />
+            <element signature="e#44608#44609#0" expanded="false" />
+            <element signature="e#44634#44635#0" expanded="false" />
+            <element signature="e#47051#47052#0" expanded="false" />
+            <element signature="e#47128#47129#0" expanded="false" />
+            <element signature="e#49185#49186#0" expanded="false" />
+            <element signature="e#49248#49249#0" expanded="false" />
+            <element signature="e#53435#53436#0" expanded="false" />
+            <element signature="e#53471#53472#0" expanded="false" />
+            <element signature="e#56965#56966#0" expanded="false" />
+            <element signature="e#57035#57036#0" expanded="false" />
+            <element signature="e#58458#58459#0" expanded="false" />
+            <element signature="e#58516#58517#0" expanded="false" />
+            <element signature="e#59509#59510#0" expanded="false" />
+            <element signature="e#59564#59565#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ForkJoinPool.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49200">
+          <caret line="2516" column="54" lean-forward="false" selection-start-line="2516" selection-start-column="54" selection-end-line="2516" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#158104#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#38422#38423#0" expanded="false" />
+            <element signature="e#38483#38484#0" expanded="false" />
+            <element signature="e#43228#43229#0" expanded="false" />
+            <element signature="e#43309#43310#0" expanded="false" />
+            <element signature="e#64232#64233#0" expanded="false" />
+            <element signature="e#64275#64276#0" expanded="false" />
+            <element signature="e#120300#120301#0" expanded="false" />
+            <element signature="e#120382#120383#0" expanded="false" />
+            <element signature="e#129276#129277#0" expanded="false" />
+            <element signature="e#129306#129307#0" expanded="false" />
+            <element signature="e#129590#129591#0" expanded="false" />
+            <element signature="e#129616#129617#0" expanded="false" />
+            <element signature="e#130095#130096#0" expanded="false" />
+            <element signature="e#130135#130136#0" expanded="false" />
+            <element signature="e#130505#130506#0" expanded="false" />
+            <element signature="e#130572#130573#0" expanded="false" />
+            <element signature="e#130823#130824#0" expanded="false" />
+            <element signature="e#130872#130873#0" expanded="false" />
+            <element signature="e#132479#132480#0" expanded="false" />
+            <element signature="e#132548#132549#0" expanded="false" />
+            <element signature="e#141687#141688#0" expanded="false" />
+            <element signature="e#141738#141739#0" expanded="false" />
+            <element signature="e#142721#142722#0" expanded="false" />
+            <element signature="e#142770#142771#0" expanded="false" />
+            <element signature="e#146348#146349#0" expanded="false" />
+            <element signature="e#146424#146425#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/io/ExpiringCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/RecursiveAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1038">
+        <state relative-caret-position="1008">
           <caret line="190" column="28" lean-forward="false" selection-start-line="190" selection-start-column="28" selection-end-line="190" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/java/util/concurrent/ForkJoinTask.java">
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/Map.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="414" column="42" lean-forward="true" selection-start-line="414" selection-start-column="42" selection-end-line="414" selection-end-column="42" />
+        <state relative-caret-position="648">
+          <caret line="374" column="14" lean-forward="false" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1576,16 +1499,30 @@
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
-          <caret line="1432" column="36" lean-forward="true" selection-start-line="1432" selection-start-column="36" selection-end-line="1432" selection-end-column="36" />
+          <caret line="565" column="27" lean-forward="false" selection-start-line="565" selection-start-column="20" selection-end-line="565" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/java/util/HashMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="1628" column="47" lean-forward="false" selection-start-line="1628" selection-start-column="39" selection-end-line="1628" selection-end-column="47" />
-          <folding />
+        <state relative-caret-position="684">
+          <caret line="1016" column="27" lean-forward="false" selection-start-line="1016" selection-start-column="27" selection-end-line="1016" selection-end-column="27" />
+          <folding>
+            <element signature="e#71766#71767#0" expanded="true" />
+            <element signature="e#71823#71824#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/java/util/LinkedHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="552" column="7" lean-forward="true" selection-start-line="552" selection-start-column="7" selection-end-line="552" selection-end-column="7" />
+          <folding>
+            <element signature="e#20264#20265#0" expanded="true" />
+            <element signature="e#20292#20293#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

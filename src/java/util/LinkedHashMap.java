@@ -160,6 +160,7 @@ import java.io.IOException;
  * @see     Hashtable
  * @since   1.4
  */
+//继承自HashMap，一个有序的Map接口实现，这里的有序指的是元素可以按插入顺序或访问顺序排列。最后插入或者最后访问的节点位于双向链表的尾部。
 public class LinkedHashMap<K,V>
     extends HashMap<K,V>
     implements Map<K,V>
@@ -189,6 +190,8 @@ public class LinkedHashMap<K,V>
     /**
      * HashMap.Node subclass for normal LinkedHashMap entries.
      */
+
+    // 双向链表节点
     static class Entry<K,V> extends Node<K,V> {
         Entry<K,V> before, after;
         Entry(int hash, K key, V value, Node<K,V> next) {
@@ -201,6 +204,8 @@ public class LinkedHashMap<K,V>
     /**
      * The head (eldest) of the doubly linked list.
      */
+
+    // 保存双向链表的head和tail节点。该两个节点是为了维持元素的顺序
     transient Entry<K,V> head;
 
     /**
@@ -219,6 +224,7 @@ public class LinkedHashMap<K,V>
     // internal utilities
 
     // link at the end of list
+    //将节点p设置为链表尾节点
     private void linkNodeLast(Entry<K,V> p) {
         Entry<K,V> last = tail;
         tail = p;
@@ -231,8 +237,8 @@ public class LinkedHashMap<K,V>
     }
 
     // apply src's links to dst
-    private void transferLinks(Entry<K,V> src,
-                               Entry<K,V> dst) {
+    //将节点src替换为dst
+    private void transferLinks(Entry<K,V> src, Entry<K,V> dst) {
         Entry<K,V> b = dst.before = src.before;
         Entry<K,V> a = dst.after = src.after;
         if (b == null)
@@ -252,17 +258,19 @@ public class LinkedHashMap<K,V>
         head = tail = null;
     }
 
+    //添加新节点
     Node<K,V> newNode(int hash, K key, V value, Node<K,V> e) {
-        Entry<K,V> p =
-            new Entry<K,V>(hash, key, value, e);
+        Entry<K,V> p = new Entry<K,V>(hash, key, value, e);
+
+        //链接到双向链表的尾部
         linkNodeLast(p);
         return p;
     }
 
+    //将节点p的next域替换为新的next节点
     Node<K,V> replacementNode(Node<K,V> p, Node<K,V> next) {
         Entry<K,V> q = (Entry<K,V>)p;
-        Entry<K,V> t =
-            new Entry<K,V>(q.hash, q.key, q.value, next);
+        Entry<K,V> t = new Entry<K,V>(q.hash, q.key, q.value, next);
         transferLinks(q, t);
         return t;
     }
@@ -280,14 +288,20 @@ public class LinkedHashMap<K,V>
         return t;
     }
 
+    //去除节点e
     void afterNodeRemoval(Node<K,V> e) { // unlink
-        Entry<K,V> p =
-            (Entry<K,V>)e, b = p.before, a = p.after;
+        Entry<K,V> p = (Entry<K,V>)e, b = p.before, a = p.after;
+
+        // 将 p 节点的前驱后后继引用置空
         p.before = p.after = null;
+
+        // b 为 null，表明 p 是头节点
         if (b == null)
             head = a;
         else
             b.after = a;
+
+        // a 为 null，表明 p 是尾节点
         if (a == null)
             tail = b;
         else
@@ -296,18 +310,26 @@ public class LinkedHashMap<K,V>
 
     void afterNodeInsertion(boolean evict) { // possibly remove eldest
         Entry<K,V> first;
+
+        // 根据条件判断是否移除最近最少被访问的节点
         if (evict && (first = head) != null && removeEldestEntry(first)) {
             K key = first.key;
             removeNode(hash(key), key, null, false, true);
         }
     }
 
+
+    //如果accessOrder为true，则保持双向链表的访问顺序。最后访问的节点位于双向链表的尾部
     void afterNodeAccess(Node<K,V> e) { // move node to last
         Entry<K,V> last;
+
+        //不为双向链表的尾节点，因为访问尾节点不影响总体访问顺序
         if (accessOrder && (last = tail) != e) {
-            Entry<K,V> p =
-                (Entry<K,V>)e, b = p.before, a = p.after;
+            Entry<K,V> p = (Entry<K,V>)e, b = p.before, a = p.after;
             p.after = null;
+
+
+            //将刚刚访问过的节点从链表中去除
             if (b == null)
                 head = a;
             else
@@ -316,6 +338,8 @@ public class LinkedHashMap<K,V>
                 a.before = b;
             else
                 last = b;
+
+            //将去除的节点链接到链表的尾部
             if (last == null)
                 head = p;
             else {
@@ -343,6 +367,11 @@ public class LinkedHashMap<K,V>
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
+
+    /**
+     * 生成一个空的LinkedHashMap,并指定其容量大小和负载因子，
+     * 默认将accessOrder设为false，按插入顺序排序
+     */
     public LinkedHashMap(int initialCapacity, float loadFactor) {
         super(initialCapacity, loadFactor);
         accessOrder = false;
@@ -355,6 +384,11 @@ public class LinkedHashMap<K,V>
      * @param  initialCapacity the initial capacity
      * @throws IllegalArgumentException if the initial capacity is negative
      */
+
+    /**
+     * 生成一个空的LinkedHashMap,并指定其容量大小，负载因子使用默认的0.75，
+     * 默认将accessOrder设为false，按插入顺序排序
+     */
     public LinkedHashMap(int initialCapacity) {
         super(initialCapacity);
         accessOrder = false;
@@ -363,6 +397,11 @@ public class LinkedHashMap<K,V>
     /**
      * Constructs an empty insertion-ordered <tt>LinkedHashMap</tt> instance
      * with the default initial capacity (16) and load factor (0.75).
+     */
+
+    /**
+     * 生成一个空的HashMap,容量大小使用默认值16，负载因子使用默认值0.75
+     * 默认将accessOrder设为false，按插入顺序排序.
      */
     public LinkedHashMap() {
         super();
@@ -395,6 +434,11 @@ public class LinkedHashMap<K,V>
      * @throws IllegalArgumentException if the initial capacity is negative
      *         or the load factor is nonpositive
      */
+
+    /**
+     * 生成一个空的LinkedHashMap,并指定其容量大小和负载因子，
+     * 默认将accessOrder设为true，按访问顺序排序
+     */
     public LinkedHashMap(int initialCapacity,
                          float loadFactor,
                          boolean accessOrder) {
@@ -411,6 +455,8 @@ public class LinkedHashMap<K,V>
      * @return <tt>true</tt> if this map maps one or more keys to the
      *         specified value
      */
+
+    //与HashMap不同，LinkedHashMap通过从head头结点开始遍历所有元素，然后确认是否存在。
     public boolean containsValue(Object value) {
         for (Entry<K,V> e = head; e != null; e = e.after) {
             V v = e.value;
@@ -505,6 +551,8 @@ public class LinkedHashMap<K,V>
      * @return   <tt>true</tt> if the eldest entry should be removed
      *           from the map; <tt>false</tt> if it should be retained.
      */
+
+    // 移除最近最少被访问条件之一，通过覆盖此方法可实现不同策略的缓存
     protected boolean removeEldestEntry(Map.Entry<K,V> eldest) {
         return false;
     }
