@@ -151,6 +151,8 @@ public interface SortedMap<K,V> extends Map<K,V> {
      *         range, and {@code fromKey} or {@code toKey} lies
      *         outside the bounds of the range
      */
+
+    //返回[fromKey, toKey)范围内的映射集合的子集
     SortedMap<K,V> subMap(K fromKey, K toKey);
 
     /**
@@ -178,6 +180,8 @@ public interface SortedMap<K,V> extends Map<K,V> {
      *         restricted range, and {@code toKey} lies outside the
      *         bounds of the range
      */
+
+    //返回键值小于toKey的所有键值对
     SortedMap<K,V> headMap(K toKey);
 
     /**
@@ -205,6 +209,8 @@ public interface SortedMap<K,V> extends Map<K,V> {
      *         restricted range, and {@code fromKey} lies outside the
      *         bounds of the range
      */
+
+    //返回键值大于等于fromKey的所有键值对
     SortedMap<K,V> tailMap(K fromKey);
 
     /**

@@ -106,6 +106,7 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+    //返回键值小于参数key的最大键值对
     Entry<K,V> lowerEntry(K key);
 
     /**
@@ -120,6 +121,7 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+    //返回键值小于参数key的最大键值
     K lowerKey(K key);
 
     /**
@@ -135,6 +137,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值不大于参数key的最大键值对
     Entry<K,V> floorEntry(K key);
 
     /**
@@ -149,6 +153,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值不大于参数key的最大键值
     K floorKey(K key);
 
     /**
@@ -164,6 +170,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值不小于参数key的最小键值对
     Entry<K,V> ceilingEntry(K key);
 
     /**
@@ -178,6 +186,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值不小于参数key的最小键值
     K ceilingKey(K key);
 
     /**
@@ -193,6 +203,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值大于参数key的最小键值对
     Entry<K,V> higherEntry(K key);
 
     /**
@@ -207,6 +219,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException if the specified key is null
      *         and this map does not permit null keys
      */
+
+    //返回键值大于参数key的最小键值对
     K higherKey(K key);
 
     /**
@@ -216,6 +230,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @return an entry with the least key,
      *         or {@code null} if this map is empty
      */
+
+    //返回映射集合中最小键值的键值对
     Entry<K,V> firstEntry();
 
     /**
@@ -225,6 +241,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @return an entry with the greatest key,
      *         or {@code null} if this map is empty
      */
+
+    //返回映射集合中最大键值的键值对
     Entry<K,V> lastEntry();
 
     /**
@@ -234,6 +252,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @return the removed first entry of this map,
      *         or {@code null} if this map is empty
      */
+
+    //删除并返回映射集合中最小键值的键值对
     Entry<K,V> pollFirstEntry();
 
     /**
@@ -243,6 +263,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @return the removed last entry of this map,
      *         or {@code null} if this map is empty
      */
+
+    //删除并返回映射集合中最大键值的键值对
     Entry<K,V> pollLastEntry();
 
     /**
@@ -260,6 +282,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *
      * @return a reverse order view of this map
      */
+
+    //返回映射集合的反序视图
     NavigableMap<K,V> descendingMap();
 
     /**
@@ -276,6 +300,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *
      * @return a navigable set view of the keys in this map
      */
+
+    //返回映射集合的所有键的NavigableSet视图
     NavigableSet<K> navigableKeySet();
 
     /**
@@ -292,6 +318,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *
      * @return a reverse order navigable set view of the keys in this map
      */
+
+    //返回映射集合的所有键的NavigableSet视图的反序
     NavigableSet<K> descendingKeySet();
 
     /**
@@ -328,6 +356,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *         range, and {@code fromKey} or {@code toKey} lies
      *         outside the bounds of the range
      */
+
+    //返回映射集合的子集
     NavigableMap<K,V> subMap(K fromKey, boolean fromInclusive,
                              K toKey, boolean toInclusive);
 
@@ -358,6 +388,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *         restricted range, and {@code toKey} lies outside the
      *         bounds of the range
      */
+
+    //返回集合中键值小于或等于参数toKey的映射
     NavigableMap<K,V> headMap(K toKey, boolean inclusive);
 
     /**
@@ -387,6 +419,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      *         restricted range, and {@code fromKey} lies outside the
      *         bounds of the range
      */
+
+    //返回集合中键值大于或等于参数toKey的映射
     NavigableMap<K,V> tailMap(K fromKey, boolean inclusive);
 
     /**
@@ -398,6 +432,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException     {@inheritDoc}
      * @throws IllegalArgumentException {@inheritDoc}
      */
+
+    //返回映射集合的子集。范围：[fromKey, toKey)，相当于：subMap(fromKey, true, toKey, false)
     SortedMap<K,V> subMap(K fromKey, K toKey);
 
     /**
@@ -409,6 +445,8 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException     {@inheritDoc}
      * @throws IllegalArgumentException {@inheritDoc}
      */
+
+    //返回集合中键值小于参数toKey的映射
     SortedMap<K,V> headMap(K toKey);
 
     /**
@@ -420,5 +458,7 @@ public interface NavigableMap<K,V> extends SortedMap<K,V> {
      * @throws NullPointerException     {@inheritDoc}
      * @throws IllegalArgumentException {@inheritDoc}
      */
+
+    //返回集合中键值大于或等于参数fromKey的映射
     SortedMap<K,V> tailMap(K fromKey);
 }
